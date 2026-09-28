@@ -1,0 +1,599 @@
+﻿<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>WorkOrder Pro - Dashboard</title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/uicons-regular-straight.css" rel="stylesheet" />
+  <link href="./css/uicons-solid-rounded.css" rel="stylesheet" />
+  <link href="./css/uicons-brands.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <script src="./js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="dashboard-page">
+  <input class="display-none" id="sidebar-toggle" type="checkbox" />
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar" id="sidebarMenu" tabindex="-1">
+    <div class="sidebar-header sidebar-div">
+      <img alt="Logo" class="brand-text" src="./images/work-order.svg" />
+      <label aria-label="Close" class="btn-close display-md-none cursor-pointer sidebar-header-label"
+        for="sidebar-toggle">
+      </label>
+    </div>
+    <!-- NAVIGATION MENU -->
+    <nav class="nav-menu">
+      <a class="nav-item active" href="dashboard.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M8 3H3v5h5zm10 0h-6v5h6zM8 12H3v6h5zm10 0h-6v6h6z" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="1.7"></path>
+        </svg>
+        Dashboard
+      </a>
+      <a class="nav-item" href="work-orders.html">
+        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M5.625 3.125H4.375C4.04348 3.125 3.72554 3.2567 3.49112 3.49112C3.2567 3.72554 3.125 4.04348 3.125 4.375V11.875C3.125 12.2065 3.2567 12.5245 3.49112 12.7589C3.72554 12.9933 4.04348 13.125 4.375 13.125H10.625C10.9565 13.125 11.2745 12.9933 11.5089 12.7589C11.7433 12.5245 11.875 12.2065 11.875 11.875V4.375C11.875 4.04348 11.7433 3.72554 11.5089 3.49112C11.2745 3.2567 10.9565 3.125 10.625 3.125H9.375"
+            stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M8.75 1.875H6.25C5.90482 1.875 5.625 2.15482 5.625 2.5V3.75C5.625 4.09518 5.90482 4.375 6.25 4.375H8.75C9.09518 4.375 9.375 4.09518 9.375 3.75V2.5C9.375 2.15482 9.09518 1.875 8.75 1.875Z"
+            stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M5.625 7.5H9.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M5.625 10H8.125" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Work Orders
+      </a>
+      <a class="nav-item" href="invoices.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M12 2H5L3 3v14l2 1h10l2-1V7z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="1.7"></path>
+          <path d="M12 2v5h5m-4 4H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="1.7"></path>
+        </svg>
+        Invoices
+      </a>
+      <a class="nav-item" href="technicians.html">
+        <img alt="" src="./images/technician.svg" />
+        Technicians
+      </a>
+      <a class="nav-item" href="customers.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M14 18v-2l-3-3H4l-3 3v2m6-9a3 3 0 1 0 0-7 3 3 0 0 0 0 7m12 9v-2l-2-3M13 3a3 3 0 0 1 0 6"
+            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+        </svg>
+        Customers
+      </a>
+      <a class="nav-item" href="sites.html">
+        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.5 0.5C4.64828 0.5 2.32833 2.81995 2.32833 5.67166C2.32833 6.61047 2.74937 7.62016 2.76701 7.66276C2.903 7.98553 3.17132 8.48687 3.3648 8.78075L6.91073 14.1535C7.05584 14.3738 7.27062 14.5 7.5 14.5C7.72938 14.5 7.94415 14.3738 8.08926 14.1538L11.6355 8.78075C11.8293 8.48687 12.0973 7.98553 12.2333 7.66276C12.2509 7.62047 12.6717 6.61078 12.6717 5.67166C12.6717 2.81995 10.3517 0.5 7.5 0.5ZM11.6723 7.42668C11.5509 7.71599 11.3012 8.18236 11.1275 8.44581L7.58122 13.8189C7.51126 13.925 7.48905 13.925 7.41908 13.8189L3.87284 8.44581C3.69913 8.18236 3.44937 7.71569 3.32799 7.42638C3.32282 7.41391 2.93677 6.48453 2.93677 5.67166C2.93677 3.1555 4.98383 1.10843 7.5 1.10843C10.0162 1.10843 12.0632 3.1555 12.0632 5.67166C12.0632 6.48575 11.6763 7.41756 11.6723 7.42668Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.5" />
+          <path
+            d="M7.5 2.93404C5.99018 2.93404 4.76206 4.16246 4.76206 5.67198C4.76206 7.18149 5.99018 8.40992 7.5 8.40992C9.00982 8.40992 10.2379 7.18149 10.2379 5.67198C10.2379 4.16246 9.00982 2.93404 7.5 2.93404ZM7.5 7.80148C6.32603 7.80148 5.37049 6.84625 5.37049 5.67198C5.37049 4.4977 6.32603 3.54247 7.5 3.54247C8.67397 3.54247 9.62951 4.4977 9.62951 5.67198C9.62951 6.84625 8.67397 7.80148 7.5 7.80148Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.5" />
+        </svg>
+        Sites
+      </a>
+      <a class="nav-item" href="job-codes.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <g clip-path="url(#a)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M10 2H3L2 3v7l7 8h3l6-6V9z"></path>
+            <path d="M6 7V6z" fill="currentColor"></path>
+          </g>
+          <defs>
+            <clippath id="a">
+              <path d="M0 0h20v20H0z" fill="#fff"></path>
+            </clippath>
+          </defs>
+        </svg>
+        Job Codes
+      </a>
+      <a class="nav-item" href="parts.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
+        </svg>
+        Parts
+      </a>
+      <a class="nav-item" href="access-level.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M16 9H4l-1 2v6l1 1h12l2-1v-6zM6 9V6a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.3"></path>
+        </svg>
+        Access Level
+      </a>
+      <a class="nav-item" href="audit-logs.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M10 18s7-3 7-8V4l-7-2-7 2v6c0 5 7 8 7 8Z" stroke="currentColor" stroke-width="1.3"></path>
+        </svg>
+        Audit Logs
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="nav-item" href="login.html">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M8 18H4l-1-2V4l1-1h4m5 11 5-4-5-4m5 4H8" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="1.7"></path>
+        </svg>
+        Logout
+      </a>
+    </div>
+  </aside>
+  <!-- MAIN CONTENT AREA -->
+  <main class="main-content">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <label class="topbar-desktop-toggle cursor-pointer topbar-left-label" for="sidebar-toggle">
+          <svg aria-hidden="true" class="topbar-menu-icon" fill="none" height="20" viewbox="0 0 20 20" width="20"
+            xmlns="http://www.width-triple.org/2000/svg">
+            <path d="M3 5h15M3 10h15M3 15h15" stroke="#62748e" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1.7"></path>
+          </svg>
+        </label>
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="dropdown">
+          <div aria-expanded="false" class="notification-icon cursor-pointer" data-bs-toggle="dropdown">
+            <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20"
+              xmlns="http://www.width-triple.org/2000/svg">
+              <path d="M15 7A5 5 0 0 0 5 7q-1 8-2 7h15q-1 1-3-7m-4 11H9" stroke="#62748e" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1.7"></path>
+            </svg>
+            <div class="notification-badge"></div>
+          </div>
+          <ul
+            class="dropdown-menu dropdown-menu-end dropdown-notification-menu dropdown-notification notificationsnew-work-orderwo-text">
+            <li>
+              <h6 class="dropdown-header font-weight-bold dd-header-text notifications-text">
+                Notifications
+              </h6>
+            </li>
+            <li>
+              <a class="dropdown-item dropdown-list-item dd-item-text" href="view-notification.html">
+                <div class="display-flex sidebar-div">
+                  <div class="notif-icon-container notif-icon-circle clipboard-icon-wrapper">
+                    <i class="fi-rs-clipboard"> </i>
+                  </div>
+                  <div>
+                    <div class="font-weight-bold notifications-text">
+                      New Work Order
+                    </div>
+                    <div class="dd-notif-trunc wo-has-been-assigned-to-y-text">
+                      WO-4832 has been assigned to you.
+                    </div>
+                    <div class="dd-item-text-sm mins-ago-text">
+                      10 mins ago
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item dropdown-list-item dd-item-text" href="view-notification.html">
+                <div class="display-flex sidebar-div">
+                  <div class="notif-icon-container notif-icon-circle exclamation-icon-wrapper">
+                    <i class="fi-rs-exclamation"> </i>
+                  </div>
+                  <div>
+                    <div class="font-weight-bold notifications-text">
+                      Inventory Alert
+                    </div>
+                    <div class="dd-notif-trunc wo-has-been-assigned-to-y-text">
+                      Refrigerant R-410A stock is critically low.
+                    </div>
+                    <div class="dd-item-text-sm mins-ago-text">
+                      1 hour ago
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item font-weight-semibold dd-item-text view-all-notifications-action"
+                href="notifications.html">
+                View all notifications
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown user-profile-dropdown">
+          <div aria-expanded="false" class="display-flex cursor-pointer sksarah-kimadmin-text gap-8"
+            data-bs-toggle="dropdown">
+            <div class="user-avatar" title="Admin User">SK</div>
+            <div class="user-info">
+              <p>Sarah Kim</p>
+              <span> Admin </span>
+            </div>
+            <i class="fi-rs-angle-small-down icon-angle-md display-flex-i"></i>
+          </div>
+          <ul
+            class="dropdown-menu dropdown-menu-end dropdown-notification-menu dropdown-user notificationsnew-work-orderwo-text">
+            <li class="dropdown-user-header">
+              <div class="user-avatar user-avatar-center user-avatar-lg">
+                AD
+              </div>
+              <div class="font-weight-bold topbar-user-name notifications-text">
+                Admin User
+              </div>
+              <div class="dd-item-text display-flex-i">
+                admin@fieldops.com
+              </div>
+              <span class="badge role-badge administrator-text">
+                Administrator
+              </span>
+            </li>
+            <li>
+              <a class="dropdown-item dropdown-action-item dd-action-text display-flex-i" href="profile.html">
+                <i class="fi-rs-user dropdown-action-icon display-flex-i">
+                </i>
+                My Profile
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item dropdown-action-item dd-action-text logout-action" href="login.html">
+                <i class="fi-rs-sign-out-alt dropdown-action-icon logout-action">
+                </i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content-area">
+      <div class="row dashboard-metrics-row">
+        <div class="column-full col-md-3">
+          <!-- Stat Card -->
+          <div class="stat-card">
+            <div class="stat-details">
+              <span class="stat-label open-work-orders-text">
+                Open Work Orders
+              </span>
+              <span class="stat-value"> 47 </span>
+              <p class="display-flex font-weight-bold stat-trend-gap from-yesterday-text">
+                <svg aria-hidden="true" fill="currentColor" height="12" viewbox="0 0 24 24" width="12"
+                  xmlns="http://www.width-triple.org/2000/svg">
+                  <path d="M24 22h-24l12-20z"></path>
+                </svg>
+                3 from yesterday
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-full col-md-3">
+          <!-- Stat Card -->
+          <div class="stat-card">
+            <div class="stat-details">
+              <span class="stat-label open-work-orders-text">
+                Active Technicians
+              </span>
+              <span class="stat-value"> 12 </span>
+              <p class="display-flex font-weight-bold stat-trend-gap from-yesterday-text">
+                <svg aria-hidden="true" fill="currentColor" height="10" viewbox="0 0 24 24" width="10"
+                  xmlns="http://www.width-triple.org/2000/svg">
+                  <circle cx="12" cy="12" r="12"></circle>
+                </svg>
+                9 on-site now
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-full col-md-3">
+          <!-- Stat Card -->
+          <div class="stat-card">
+            <div class="stat-details">
+              <span class="stat-label open-work-orders-text">
+                Completed Today
+              </span>
+              <span class="stat-value"> 8 </span>
+              <p class="display-flex font-weight-bold stat-trend-gap from-yesterday-text">
+                <svg aria-hidden="true" fill="currentColor" height="12" viewbox="0 0 24 24" width="12"
+                  xmlns="http://www.width-triple.org/2000/svg">
+                  <path d="M24 22h-24l12-20z"></path>
+                </svg>
+                On track
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-full col-md-3">
+          <!-- Stat Card -->
+          <div class="stat-card">
+            <div class="stat-details">
+              <span class="stat-label open-work-orders-text">
+                Pending Invoices
+              </span>
+              <span class="stat-value font-weight-bold text-warning-amber">
+                $24,180
+              </span>
+              <p class="overdue-text">5 overdue</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-full col-lg-8 column-full col-md-8">
+          <div class="panel overflow-hidden territory-mapactiveurgentsched-text">
+            <div class="panel-header">
+              <h2 class="panel-title font-weight-bold territory-map-text">
+                Territory Map
+              </h2>
+              <div class="map-legend super-admin-users-text">
+                <div class="legend-item">
+                  <span class="legend-dot legend-dot-success"> </span>
+                  Active
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot legend-dot-danger"> </span>
+                  Urgent
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot legend-item-span"> </span>
+                  Scheduled
+                </div>
+              </div>
+            </div>
+            <div class="map-container">
+              <img alt="Service Area Map" class="map-img map-container-img"
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" />
+            </div>
+          </div>
+          <div class="panel payment-termsnet-days-bank-text">
+            <div>
+              <h2 class="panel-title font-weight-bold territory-map-text">
+                Technician Status
+              </h2>
+            </div>
+            <div class="technicianstatuscurrent-josecondary-text">
+              <div class="table-responsive">
+                <table class="table table-custom table-hover audit-logs-text">
+                  <thead>
+                    <tr>
+                      <th class="font-weight-bold table-th-padding technician-text">
+                        Technician
+                      </th>
+                      <th class="font-weight-bold table-th-padding technician-text">
+                        STATUS
+                      </th>
+                      <th class="font-weight-bold table-th-padding technician-text">
+                        Current Job
+                      </th>
+                      <th class="font-weight-bold table-th-padding technician-text">
+                        ETA
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="table-td-padding display-flex-i">
+                        Marcus Rivera
+                      </td>
+                      <td class="table-td-padding">
+                        <span class="badge-status green badge-status-inline">
+                          On Site
+                        </span>
+                      </td>
+                      <td class="table-td-padding">
+                        <span> WO-2847 -- Acme HVAC </span>
+                      </td>
+                      <td class="table-td-padding display-flex-i">--</td>
+                    </tr>
+                    <tr>
+                      <td class="table-td-padding display-flex-i">
+                        Diana Lopez
+                      </td>
+                      <td class="table-td-padding">
+                        <span class="badge-status yellow badge-status-inline">
+                          En Route
+                        </span>
+                      </td>
+                      <td class="table-td-padding display-flex-i">
+                        WO-2851 -- TechStart
+                      </td>
+                      <td class="table-td-padding display-flex-i">12 min</td>
+                    </tr>
+                    <tr>
+                      <td class="table-td-padding display-flex-i">
+                        Jake Thornton
+                      </td>
+                      <td class="table-td-padding">
+                        <span class="badge-status blue badge-status-inline">
+                          Scheduled
+                        </span>
+                      </td>
+                      <td class="table-td-padding display-flex-i">
+                        WO-2853 -- Park Hotel
+                      </td>
+                      <td class="table-td-padding display-flex-i">2:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td class="table-td-padding display-flex-i">
+                        Amy Chen
+                      </td>
+                      <td class="table-td-padding">
+                        <span class="badge-status green badge-status-inline">
+                          On Site
+                        </span>
+                      </td>
+                      <td class="table-td-padding display-flex-i">
+                        WO-2840 -- City Hall
+                      </td>
+                      <td class="table-td-padding display-flex-i">--</td>
+                    </tr>
+                    <tr>
+                      <td class="table-td-padding display-flex-i">
+                        Ravi Sharma
+                      </td>
+                      <td class="table-td-padding">
+                        <span class="badge-status red badge-status-inline">
+                          Overdue
+                        </span>
+                      </td>
+                      <td class="table-td-padding display-flex-i">
+                        WO-2838 -- Metro Bldg
+                      </td>
+                      <td class="table-td-padding display-flex-i">
+                        45 min late
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column-full col-lg-4 column-full">
+          <div class="panel recent-activitywo-marked-text">
+            <div class="panel-header">
+              <h2 class="panel-title font-weight-bold territory-map-text">
+                Recent Activity
+              </h2>
+            </div>
+            <div class="tech-list">
+              <a class="tech-item wo-marked-completediana-l-action" href="technicians.html">
+                <div class="display-flex sidebar-div">
+                  <div class="tech-avatar avatar-bg-success-pale display-flex-div">
+                    <svg aria-hidden="true" fill="none" height="16" width="16">
+                      <g clip-path="url(#a)" stroke="#16a34a" stroke-width="1.3">
+                        <path d="M15 7v1a7 7 0 1 1-4-6"></path>
+                        <path d="M15 3 8 9 6 7"></path>
+                      </g>
+                      <defs>
+                        <clippath id="a">
+                          <path d="M0 0h16v16H0z" fill="#fff"></path>
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="wt-medium notifications-text">
+                      WO-2843 marked complete
+                    </div>
+                    <div class="diana-lopez-h-ago-text">
+                      Diana Lopez Â· 2h ago
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a class="tech-item wo-marked-completediana-l-action" href="technicians.html">
+                <div class="display-flex sidebar-div">
+                  <div class="tech-avatar avatar-bg-primary-light display-flex-div">
+                    <svg aria-hidden="true" fill="none" height="16" width="16">
+                      <path d="M10 1H4a1 1 0 0 0-1 2v10a1 1 0 0 0 1 2h8a1 1 0 0 0 2-2V5z" stroke="#2563eb"
+                        stroke-width="1.3"></path>
+                      <path d="M10 1v4h4" stroke="#2563eb" stroke-width="1.3"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="wt-medium notifications-text">
+                      WO-2847 created
+                    </div>
+                    <div class="diana-lopez-h-ago-text">
+                      Sarah Kim Â· 3h ago
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a class="tech-item wo-marked-completediana-l-action" href="technicians.html">
+                <div class="display-flex sidebar-div">
+                  <div class="tech-avatar avatar-bg-success-light display-flex-div">
+                    <svg aria-hidden="true" fill="none" height="16" width="16">
+                      <g clip-path="url(#a)" stroke="#059669" stroke-width="1.3">
+                        <path d="M14 3H2L1 4v8l1 1h12l2-1V4zM1 7h15"></path>
+                      </g>
+                      <defs>
+                        <clippath id="a">
+                          <path d="M0 0h16v16H0z" fill="#fff"></path>
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="wt-medium notifications-text">
+                      INV-10039 paid -- $1,240
+                    </div>
+                    <div class="diana-lopez-h-ago-text">System Â· 4h ago</div>
+                  </div>
+                </div>
+              </a>
+              <a class="tech-item wo-marked-completediana-l-action" href="technicians.html">
+                <div class="display-flex sidebar-div">
+                  <div class="tech-avatar avatar-bg-danger-light display-flex-div">
+                    <svg aria-hidden="true" fill="none" height="16" width="16">
+                      <g clip-path="url(#a)" stroke="#dc2626" stroke-width="1.3">
+                        <path d="m7 3-5 9a1 1 0 0 0 1 2h11a1 1 0 0 0 1-2l-5-9a1 1 0 0 0-3 0Zm1 3v3m0 2"></path>
+                      </g>
+                      <defs>
+                        <clippath id="a">
+                          <path d="M0 0h16v16H0z" fill="#fff"></path>
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="wt-medium notifications-text">
+                      Urgent WO-2850 flagged
+                    </div>
+                    <div class="diana-lopez-h-ago-text">
+                      Jake Thornton Â· 5h ago
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a class="tech-item wo-marked-completediana-l-action" href="technicians.html">
+                <div class="display-flex sidebar-div">
+                  <div class="tech-avatar avatar-bg-slate-light display-flex-div">
+                    <svg aria-hidden="true" fill="none" height="16" width="16">
+                      <g clip-path="url(#a)" stroke="#64748b" stroke-width="1.3">
+                        <path d="M11 14v-1l-3-3H4l-3 3v1m5-7a3 3 0 1 0 0-5 3 3 0 0 0 0 5Zm6 0 1 2 3-3"></path>
+                      </g>
+                      <defs>
+                        <clippath id="a">
+                          <path d="M0 0h16v16H0z" fill="#fff"></path>
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="wt-medium notifications-text">
+                      Amy Chen checked in to WO-2840
+                    </div>
+                    <div class="diana-lopez-h-ago-text">
+                      Amy Chen Â· 6h ago
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a class="tech-item wo-marked-completediana-l-action" href="technicians.html">
+                <div class="display-flex sidebar-div">
+                  <div class="tech-avatar avatar-bg-purple-light display-flex-div">
+                    <svg aria-hidden="true" fill="none" height="16" width="16">
+                      <path d="M14 10v3l-1 1H4a1 1 0 0 1-2-1v-3m3-3 3 3 4-3m-4 3V2" stroke="#9333ea" stroke-width="1.3">
+                      </path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="wt-medium notifications-text">
+                      12 work orders imported from iVerticle
+                    </div>
+                    <div class="diana-lopez-h-ago-text">System Â· 8h ago</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
