@@ -70,7 +70,8 @@ return new class extends Migration
                     'model_has_permissions_permission_model_type_primary');
             } else {
                 $table->primary([$pivotPermission, $columnNames['model_morph_key'], 'model_type'],
-                    'model_has_permissions_permission_model_type_primary');
+                    'model_has_permissions_permission_mod
+                    el_type_primary');
             }
         });
 
