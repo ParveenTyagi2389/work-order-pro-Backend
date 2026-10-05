@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Management\{PermissionsController, RoleController, UserRoleController};
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WorkSiteController;
+use App\Http\Controllers\Admin\{SiteController, CustomerTypeController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
 
 
@@ -25,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::put('permissions/{id}', [PermissionsController::class, 'update'])->name('permissions.update');
     Route::delete('permissions/{id}', [PermissionsController::class, 'destroy'])->name('permissions.destroy');
 
-     Route::get('roles/index', [RoleController::class, 'index'])->name('roles.index');
+    Route::get('roles/index', [RoleController::class, 'index'])->name('roles.index');
     Route::get('roles/create', [RoleController::class, 'create'])->name('roles.create');
     Route::post('roles', [RoleController::class, 'store'])->name('roles.store');
     Route::get('roles/{id}/edit', [RoleController::class, 'edit'])->name('roles.edit');
@@ -56,8 +57,14 @@ Route::middleware('auth')->group(function () {
 
     // Work Site Routes
     Route::get('/map', [WorkSiteController::class, 'index'])->name('map.index');
-    Route::get('/add-site', [WorkSiteController::class, 'create'])->name('site.create');
+    Route::get('/add-site', [WorkSiteController::class, 'create']);
     Route::post('/add-site', [WorkSiteController::class, 'store'])->name('site.store');
+
+    // Site Routes
+    Route::resource('sites', SiteController::class);
+    
+    Route::resource('customer-types', CustomerTypeController::class);
+
 });
 
 

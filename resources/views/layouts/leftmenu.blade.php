@@ -2,7 +2,7 @@
   <!-- SIDEBAR NAVIGATION -->
   <aside class="sidebar" id="sidebarMenu" tabindex="-1">
     <div class="sidebar-header sidebar-div">
-      <img alt="Logo" class="brand-text" src="./images/work-order.svg" />
+      <img alt="Logo" class="brand-text" src="{{ asset('images/work-order.svg') }}" />
       <label aria-label="Close" class="btn-close display-md-none cursor-pointer sidebar-header-label"
         for="sidebar-toggle">
       </label>
@@ -45,7 +45,7 @@
         </svg>
         Customers
       </a>
-      <a class="nav-item" href="sites.html">
+      <a class="nav-item" href="{{route('sites.index')}}">
 <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7.5 0.5C4.64828 0.5 2.32833 2.81995 2.32833 5.67166C2.32833 6.61047 2.74937 7.62016 2.76701 7.66276C2.903 7.98553 3.17132 8.48687 3.3648 8.78075L6.91073 14.1535C7.05584 14.3738 7.27062 14.5 7.5 14.5C7.72938 14.5 7.94415 14.3738 8.08926 14.1538L11.6355 8.78075C11.8293 8.48687 12.0973 7.98553 12.2333 7.66276C12.2509 7.62047 12.6717 6.61078 12.6717 5.67166C12.6717 2.81995 10.3517 0.5 7.5 0.5ZM11.6723 7.42668C11.5509 7.71599 11.3012 8.18236 11.1275 8.44581L7.58122 13.8189C7.51126 13.925 7.48905 13.925 7.41908 13.8189L3.87284 8.44581C3.69913 8.18236 3.44937 7.71569 3.32799 7.42638C3.32282 7.41391 2.93677 6.48453 2.93677 5.67166C2.93677 3.1555 4.98383 1.10843 7.5 1.10843C10.0162 1.10843 12.0632 3.1555 12.0632 5.67166C12.0632 6.48575 11.6763 7.41756 11.6723 7.42668Z" fill="currentColor" stroke="currentColor" stroke-width="0.5"/>
 <path d="M7.5 2.93404C5.99018 2.93404 4.76206 4.16246 4.76206 5.67198C4.76206 7.18149 5.99018 8.40992 7.5 8.40992C9.00982 8.40992 10.2379 7.18149 10.2379 5.67198C10.2379 4.16246 9.00982 2.93404 7.5 2.93404ZM7.5 7.80148C6.32603 7.80148 5.37049 6.84625 5.37049 5.67198C5.37049 4.4977 6.32603 3.54247 7.5 3.54247C8.67397 3.54247 9.62951 4.4977 9.62951 5.67198C9.62951 6.84625 8.67397 7.80148 7.5 7.80148Z" fill="currentColor" stroke="currentColor" stroke-width="0.5"/>
