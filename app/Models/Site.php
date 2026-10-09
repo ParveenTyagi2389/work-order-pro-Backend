@@ -2,21 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Site extends Model
 {
-      use HasFactory;
+    use HasFactory;
+
     protected $table = 'sites';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
-    public $timestamps = false; // sites table has no created_at / updated_at
 
     protected $fillable = [
-        'cust_type_id',
+        'customer_type',
         'name',
-        'bill_to_id',
+        'bill_to',
         'site_id',
         'address',
         'city',
@@ -30,28 +30,27 @@ class Site extends Model
     ];
 
     protected $casts = [
-        'latitude'  => 'decimal:7',
+        'latitude' => 'decimal:7',
         'longitude' => 'decimal:7',
     ];
 
-    /* ---------- Relationships ---------- */
-
-    public function customerType()
+    // customer_type is stored as a text name in sites, not as a customer_type_id.
+    public function customerType(): BelongsTo
     {
-        return $this->belongsTo(CustomerType::class, 'cust_type_id', 'customer_type_id');
+        return $this->belongsTo(CustomerType::class, 'customer_type', 'name');
     }
 
-    public function billTo()
+    public function billTo(): BelongsTo
     {
-        return $this->belongsTo(BillTo::class, 'bill_to_id', 'id');
+        return $this->belongsTo(BillTo::class, 'bill_to', 'id');
     }
 
-    public function workOrder()
+    public function workOrders(): HasMany
     {
-        return $this->hasMany(workOrder::class, 'site_id', 'id');
+        return $this->hasMany(WorkOrder::class, 'site_id', 'id');
     }
 
-    public function storePictures()
+    public function storePictures(): HasMany
     {
         return $this->hasMany(StorePicture::class, 'site_id', 'id');
     }

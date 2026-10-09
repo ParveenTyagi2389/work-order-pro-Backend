@@ -4,12 +4,15 @@
 @section('page-title', 'Sites')
 
 @section('content')
-    <div class="mb-4">
-        <h2 class="page-title-custom mb-1">Add site</h2>
-        <p class="text-muted text-base">Sites · New location and access details</p>
-    </div>
+    <div class="content-area">
+        <div class="mb-4">
+            <h2 class="page-title-custom mb-1">Add site</h2>
+            <p class="text-muted text-base">Sites · New location and access details</p>
+        </div>
 
-    <form method="POST" action="{{ route('sites.store') }}">
-        @include('backend.site._form')
-    </form>
+        <form method="POST" action="{{ route('sites.store') }}">
+            @csrf
+            @include('backend.site._form')
+        </form>
+    </div>
 @endsection

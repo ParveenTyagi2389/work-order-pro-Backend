@@ -14,21 +14,22 @@ class CustomerTypeRequest extends FormRequest
 
     public function rules(): array
     {
-        $id = $this->route('customer_type')?->customer_type_id;
+        $customerTypeId = $this->route('customer_type')?->id;
 
         return [
             'name' => [
-                'required', 'string', 'max:255',
-                Rule::unique('customer_types', 'name')->ignore($id, 'customer_type_id'),
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('customer_types', 'name')->ignore($customerTypeId),
             ],
-            'is_active' => ['boolean'],
         ];
     }
 
-    protected function prepareForValidation(): void
+    public function attributes(): array
     {
-        $this->merge([
-            'is_active' => $this->boolean('is_active'),
-        ]);
+        return [
+            'name' => 'customer type name',
+        ];
     }
 }

@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Management\{PermissionsController, RoleController, UserRoleController};
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WorkSiteController;
-use App\Http\Controllers\Admin\{SiteController, CustomerTypeController};
+use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
 
 
@@ -62,8 +62,13 @@ Route::middleware('auth')->group(function () {
 
     // Site Routes
     Route::resource('sites', SiteController::class);
-    
     Route::resource('customer-types', CustomerTypeController::class);
+
+    Route::resource('technicians', TechnicianController::class);
+    Route::get('technicians-export', [TechnicianController::class, 'export'])->name('technicians.export');
+
+    // Billing Account Routes
+    Route::resource('bill-to', BillToController::class);
 
 });
 

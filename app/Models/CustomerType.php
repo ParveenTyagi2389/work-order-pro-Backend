@@ -2,31 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CustomerType extends Model
 {
-    use HasFactory;
-
     protected $table = 'customer_types';
-    protected $primaryKey = 'customer_type_id';
-    public $incrementing = true;
-    protected $keyType = 'int';
 
     protected $fillable = [
         'name',
-        'is_active',
     ];
 
-    protected $casts = [
-        'is_active' => 'boolean',
-    ];
-
-    /* ---------- Relationships ---------- */
-
-    public function sites()
+    /**
+     * A customer type can be assigned to many sites.
+     */
+    public function sites(): HasMany
     {
-        return $this->hasMany(Site::class, 'cust_type_id', 'customer_type_id');
+        return $this->hasMany(Site::class, 'customer_type');
     }
 }

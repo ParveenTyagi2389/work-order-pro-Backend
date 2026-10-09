@@ -25,7 +25,16 @@
 </svg>
         Work Orders
       </a>
-      <a class="nav-item" href="invoices.html">
+      <a class="nav-item" href="{{ route('bill-to.index') }}">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M12 2H5L3 3v14l2 1h10l2-1V7z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="1.7"></path>
+          <path d="M12 2v5h5m-4 4H7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="1.7"></path>
+        </svg>
+        Billing Accounts
+      </a>
+       <a class="nav-item" href="invoices.html">
         <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
           <path d="M12 2H5L3 3v14l2 1h10l2-1V7z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
             stroke-width="1.7"></path>
@@ -34,16 +43,16 @@
         </svg>
         Invoices
       </a>
-      <a class="nav-item" href="technicians.html">
+      <a class="nav-item {{ request()->routeIs('technicians.*') ? 'active' : '' }}" href="{{ route('technicians.index') }}">
         <img alt="" src="./images/technician.svg" />
         Technicians
       </a>
-      <a class="nav-item" href="customers.html">
+      <a class="nav-item {{ request()->routeIs('customer-types.*') ? 'active' : '' }}" href="{{ route('customer-types.index') }}">
         <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
           <path d="M14 18v-2l-3-3H4l-3 3v2m6-9a3 3 0 1 0 0-7 3 3 0 0 0 0 7m12 9v-2l-2-3M13 3a3 3 0 0 1 0 6"
             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
         </svg>
-        Customers
+        Customer Types
       </a>
       <a class="nav-item" href="{{route('sites.index')}}">
 <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
