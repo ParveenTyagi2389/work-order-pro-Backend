@@ -4,6 +4,7 @@
 
 @section('page-title', 'WorkOrder Pro - Add Customer Type')
 
+
 @section('content')
 <div>
     <h2 class="page-title font-weight-bold">Add Customer Type</h2>

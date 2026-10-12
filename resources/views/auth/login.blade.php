@@ -68,11 +68,11 @@
       @enderror
     </div>
 
-    <div class="forgot-password-text">
+    {{-- <div class="forgot-password-text">
       <a class="forgot-link forgot-password-text-a-custom" href="{{ route('password.request') }}">
         Forgot password?
       </a>
-    </div>
+    </div> --}}
 
     <button class="btn btn-primary btn-primary-custom sign-in" type="submit">
       Sign In

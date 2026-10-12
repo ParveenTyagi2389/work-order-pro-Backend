@@ -1,7 +1,13 @@
 @extends('layouts.master')
-@section('title','WorkOrder Pro - Add Technician')
-@section('header-title','Technician')
+@section('topbar-title', 'Add Technician')
+@section('page-title', 'WorkOrder Pro - Add Technician')
 @section('content')
-<div class="manage-usersall-work-ordersvie-text"><h2 class="page-title font-weight-bold manage-usersall-work-ordersvie-text-h-custom">Add Technician</h2><p class="users-text">Complete the profile to onboard a new field technician</p></div>
-@include('backend.technicians._form')
+<div class="content-area">
+    @if ($errors->any())<div class="alert alert-danger">Please correct the highlighted fields.</div>@endif
+    <div class="mb-4"><h2 class="page-title font-weight-bold">Add Technician</h2><p class="breadcrumb-text">Technicians · Add technician details</p></div>
+    <form method="POST" action="{{ route('technicians.store') }}">
+        @csrf
+        @include('backend.technicians._form')
+    </form>
+</div>
 @endsection

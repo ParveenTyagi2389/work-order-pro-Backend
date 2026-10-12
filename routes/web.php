@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Management\{PermissionsController, RoleController, UserRoleController};
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WorkSiteController;
-use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController};
+use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController,JobCodeController, ColorController,ShapeController, PartController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
 
 
@@ -69,6 +69,11 @@ Route::middleware('auth')->group(function () {
 
     // Billing Account Routes
     Route::resource('bill-to', BillToController::class);
+
+    Route::resource('job-codes', JobCodeController::class)->parameters(['job-codes' => 'job_code']);
+    Route::resource('colors', ColorController::class);
+    Route::resource('shapes', ShapeController::class);
+    Route::resource('parts', PartController::class);
 
 });
 
