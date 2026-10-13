@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Management\{PermissionsController, RoleController, UserRoleController};
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WorkSiteController;
-use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController,JobCodeController, ColorController,ShapeController, PartController};
+use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController,JobCodeController, ColorController,ShapeController, PartController, WorkOrderController,
+JobPartController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
 
 
@@ -74,6 +75,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('colors', ColorController::class);
     Route::resource('shapes', ShapeController::class);
     Route::resource('parts', PartController::class);
+    Route::resource('work-orders', WorkOrderController::class)->parameters(['work-orders' => 'work_order']);
+    Route::resource('job-parts', JobPartController::class)->parameters(['job-parts' => 'job_part']);
 
 });
 

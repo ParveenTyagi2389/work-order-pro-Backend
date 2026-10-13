@@ -21,15 +21,16 @@
             </svg>
             Dashboard
         </a>
-      {{-- <a class="nav-item" href="work-orders.html">
-<svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.625 3.125H4.375C4.04348 3.125 3.72554 3.2567 3.49112 3.49112C3.2567 3.72554 3.125 4.04348 3.125 4.375V11.875C3.125 12.2065 3.2567 12.5245 3.49112 12.7589C3.72554 12.9933 4.04348 13.125 4.375 13.125H10.625C10.9565 13.125 11.2745 12.9933 11.5089 12.7589C11.7433 12.5245 11.875 12.2065 11.875 11.875V4.375C11.875 4.04348 11.7433 3.72554 11.5089 3.49112C11.2745 3.2567 10.9565 3.125 10.625 3.125H9.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.75 1.875H6.25C5.90482 1.875 5.625 2.15482 5.625 2.5V3.75C5.625 4.09518 5.90482 4.375 6.25 4.375H8.75C9.09518 4.375 9.375 4.09518 9.375 3.75V2.5C9.375 2.15482 9.09518 1.875 8.75 1.875Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.625 7.5H9.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.625 10H8.125" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+      <a class="nav-item {{ request()->routeIs('work-orders.*') ? 'active' : '' }}" href="{{ route('work-orders.index') }}">
+
+        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.625 3.125H4.375C4.04348 3.125 3.72554 3.2567 3.49112 3.49112C3.2567 3.72554 3.125 4.04348 3.125 4.375V11.875C3.125 12.2065 3.2567 12.5245 3.49112 12.7589C3.72554 12.9933 4.04348 13.125 4.375 13.125H10.625C10.9565 13.125 11.2745 12.9933 11.5089 12.7589C11.7433 12.5245 11.875 12.2065 11.875 11.875V4.375C11.875 4.04348 11.7433 3.72554 11.5089 3.49112C11.2745 3.2567 10.9565 3.125 10.625 3.125H9.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.75 1.875H6.25C5.90482 1.875 5.625 2.15482 5.625 2.5V3.75C5.625 4.09518 5.90482 4.375 6.25 4.375H8.75C9.09518 4.375 9.375 4.09518 9.375 3.75V2.5C9.375 2.15482 9.09518 1.875 8.75 1.875Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.625 7.5H9.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.625 10H8.125" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         Work Orders
-      </a> --}}
+      </a>
     
       <a class="nav-item {{ request()->routeIs('bill-to.*') ? 'active' : '' }}" href="{{ route('bill-to.index') }}">
 
@@ -122,6 +123,13 @@
           <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
         </svg>
         Parts
+      </a>
+
+      <a class="nav-item {{ request()->routeIs('job-parts.*') ? 'active' : '' }}" href="{{ route('job-parts.index') }}">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
+        </svg>
+        Job Parts
       </a>
 
       {{-- 
