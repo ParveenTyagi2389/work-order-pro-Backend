@@ -5,7 +5,7 @@ use App\Http\Controllers\Management\{PermissionsController, RoleController, User
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WorkSiteController;
 use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController,JobCodeController, ColorController,ShapeController, PartController, WorkOrderController,
-JobPartController};
+JobPartController,JobBillableController,JobFlatRateController,JobReimbursementController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
 
 
@@ -63,20 +63,30 @@ Route::middleware('auth')->group(function () {
 
     // Site Routes
     Route::resource('sites', SiteController::class);
+
+    // Customer Type Routes
     Route::resource('customer-types', CustomerTypeController::class);
 
+    // Technician Routes
     Route::resource('technicians', TechnicianController::class);
     Route::get('technicians-export', [TechnicianController::class, 'export'])->name('technicians.export');
 
     // Billing Account Routes
     Route::resource('bill-to', BillToController::class);
 
+    // Job Code Routes
     Route::resource('job-codes', JobCodeController::class)->parameters(['job-codes' => 'job_code']);
+
+    // Color, Shape, Part, Work Order, Job Part, Job Billable, Job Flat Rate, and Job Reimbursement Routes
     Route::resource('colors', ColorController::class);
     Route::resource('shapes', ShapeController::class);
     Route::resource('parts', PartController::class);
     Route::resource('work-orders', WorkOrderController::class)->parameters(['work-orders' => 'work_order']);
     Route::resource('job-parts', JobPartController::class)->parameters(['job-parts' => 'job_part']);
+    Route::resource('job-billables', JobBillableController::class)->parameters(['job-billables'=>'job_billable']);
+    Route::resource('job-flat-rates', JobFlatRateController::class)->parameters(['job-flat-rates'=>'job_flat_rate']);
+    Route::resource('job-reimbursements', JobReimbursementController::class)->parameters(['job-reimbursements'=>'job_reimbursement']);
+
 
 });
 

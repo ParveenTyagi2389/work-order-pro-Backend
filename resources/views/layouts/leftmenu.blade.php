@@ -132,6 +132,13 @@
         Job Parts
       </a>
 
+      <a class="nav-item {{ request()->routeIs('job-flat-rates.*') ? 'active' : '' }}" href="{{ route('job-flat-rates.index') }}">
+        <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
+        </svg>
+        Job Flat Rates
+      </a>
+
       {{-- 
       
       <a class="nav-item" href="access-level.html">

@@ -65,7 +65,7 @@
                         name="customer_type" required>
                     <option value="">— Select customer type —</option>
                     @foreach ($customerTypes as $type)
-                        <option value="{{ $type->name }}"
+                        <option value="{{ $type->id }}"
                             @selected((string) $selectedCustomerType === (string) $type->name)>
                             {{ $type->name }}
                         </option>

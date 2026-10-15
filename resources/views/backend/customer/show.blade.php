@@ -30,6 +30,7 @@
                 {{ $customerType->name }}
             </div>
             <div class="users-text">{{ $customerType->sites_count }} service site(s) assigned</div>
+            
         </div>
     </div>
 
@@ -45,6 +46,7 @@
             </thead>
             <tbody>
             @forelse($customerType->sites as $site)
+            
                 <tr>
                     <td class="font-weight-bold jun-am-text">{{ $site->name }}</td>
                     <td class="market-st-san-francisco-text">
