@@ -17,14 +17,23 @@ class ShapeController extends Controller
             ->orderBy('shape_name')->paginate(10)->withQueryString();
         return view('backend.shapes.index',compact('shapes'));
     }
-    public function create(): View { return view('backend.shapes.create'); }
+    public function create(): View 
+    {
+        return view('backend.shapes.create');
+    }
     public function store(ShapeRequest $request): RedirectResponse
     {
         Shape::create($request->validated());
         return redirect()->route('shapes.index')->with('success','Shape created successfully.');
     }
-    public function show(Shape $shape): View { return view('backend.shapes.show',compact('shape')); }
-    public function edit(Shape $shape): View { return view('backend.shapes.edit',compact('shape')); }
+    public function show(Shape $shape): View
+    {
+        return view('backend.shapes.show',compact('shape')); 
+    }
+    public function edit(Shape $shape): View 
+    {
+        return view('backend.shapes.edit',compact('shape')); 
+    }
     public function update(ShapeRequest $request, Shape $shape): RedirectResponse
     {
         $shape->update($request->validated());

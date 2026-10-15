@@ -26,7 +26,10 @@ class TechnicianController extends Controller
             ->orderBy('name')->paginate(10)->withQueryString();
         return view('backend.technicians.index', compact('technicians'));
     }
-    public function create(): View { return view('backend.technicians.create'); }
+    public function create(): View
+    {
+         return view('backend.technicians.create');
+    }
     public function store(TechnicianRequest $request): RedirectResponse
     {
         $data = $request->validated();
@@ -34,8 +37,14 @@ class TechnicianController extends Controller
         $technician = Technician::create($data);
         return redirect()->route('technicians.show', $technician)->with('success', 'Technician created successfully.');
     }
-    public function show(Technician $technician): View { return view('backend.technicians.show', compact('technician')); }
-    public function edit(Technician $technician): View { return view('backend.technicians.edit', compact('technician')); }
+    public function show(Technician $technician): View 
+    {
+        return view('backend.technicians.show', compact('technician'));
+    }
+    public function edit(Technician $technician): View 
+    {
+        return view('backend.technicians.edit', compact('technician')); 
+    }
     public function update(TechnicianRequest $request, Technician $technician): RedirectResponse
     {
         $data = $request->validated();
