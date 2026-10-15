@@ -157,7 +157,6 @@ body {
 .nav-menu {
   padding: 11px 8px;
   overflow-y: auto;
-  flex: 1;
 }
 
 .sidebar .nav-item {
@@ -891,7 +890,7 @@ body {
   text-decoration: none;
   text-align: center;
   max-width: fit-content;
-  width: fit-content;
+  width: 100%;
 }
 
 .form-control-custom {
@@ -1553,7 +1552,6 @@ body {
 }
 
 .day-picker-btn {
-  flex: 1;
   text-align: center;
   padding: 8px 12px;
   border: 1px solid #d1d5db;
@@ -1575,7 +1573,9 @@ body {
 .search-input-width {
   width: 100%;
   position: relative;
-  flex: 1;
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .badge-status-orange {
@@ -2147,7 +2147,6 @@ input[type="checkbox"].display-none:checked+.day-picker-btn {
 }
 
 .search-icon-wrapper {
-  flex: 1 1 auto;
   position: relative;
 }
 
@@ -2971,7 +2970,6 @@ input[type="checkbox"].display-none:checked+.day-picker-btn {
   border-radius: 8px;
   padding: 16px;
   text-align: left;
-  flex: 1;
 }
 
 .code-usageactivethis-monthav-text .this-monthavg-margin-text {
@@ -3520,7 +3518,6 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 16px;
-  flex: 1;
 }
 
 .conflict-record-box.incoming {
@@ -3601,12 +3598,10 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 }
 
 .super-admin-users-text .search-input-width {
-  flex: 1 1 auto;
   width: auto;
 }
 
 .super-admin-users-text select {
-  flex: 0 0 auto;
   width: 180px;
 }
 
@@ -3617,7 +3612,6 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 }
 
 .stat-card-custom {
-  flex: 1;
   background-color: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -3708,10 +3702,6 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 .notification-icon-wrap.bg-red-light {
   background-color: #fee2e2;
   color: #dc2626;
-}
-
-.notification-content-col {
-  flex: 1;
 }
 
 .notification-title-wrap {
@@ -4271,10 +4261,6 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
   margin-bottom: 24px;
 }
 
-.filter-bar-left {
-  flex: 1;
-}
-
 .filter-bar-right {
   display: flex;
   align-items: center;
@@ -4404,7 +4390,6 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 }
 
 .wo-workflow-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -4610,7 +4595,6 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 }
 
 .notif-content-flex {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4733,10 +4717,6 @@ a.notification-title-text:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.flex-grow-one {
-  flex: 1;
 }
 
 .flex-row-nowrap {
