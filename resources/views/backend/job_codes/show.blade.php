@@ -7,11 +7,11 @@
         <h2 class="page-title font-weight-bold">
             {{ $jobCode->foldername }}
         </h2>
-        <div>
-            <a href="{{ route('job-codes.index') }}" class="btn bg-white font-weight-bold">
+        <div class="display-flex justify-content-end gap-3">
+            <a href="{{ route('job-codes.index') }}" class="btn-back-custom">
                 Back
             </a>
-            <a href="{{ route('job-codes.edit',$jobCode) }}" class="btn btn-success text-white font-weight-bold">
+            <a href="{{ route('job-codes.edit',$jobCode) }}" class="btn-primary-custom">
                 Edit
             </a>
         </div>

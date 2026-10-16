@@ -165,8 +165,8 @@
 </div>
 
 <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('sites.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">Back</a>
-    <button class="btn btn-success font-weight-bold text-white w-fixed-sm" type="submit">Save</button>
+    <a href="{{ route('sites.index') }}" class="btn-back-custom">Back</a>
+    <button class="btn-custom btn-primary-custom" type="submit">Save</button>
 </div>
 
 @push('scripts')

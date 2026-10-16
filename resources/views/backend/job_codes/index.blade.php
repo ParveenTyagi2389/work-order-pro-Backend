@@ -9,9 +9,10 @@
     <div class="search-action-row">
         <form method="GET" action="{{ route('job-codes.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search job codes">
+            <i class="fi-rs-search filter-search-icon"></i>
             <button class="btn border btn-small-padding view-action">Search</button>
         </form>
-        <a class="btn-custom btn-primary-custom font-weight-bold create-role-action text-decoration-none" href="{{ route('job-codes.create') }}">+ Add</a>
+        <a class="btn-custom btn-primary-custom text-decoration-none" href="{{ route('job-codes.create') }}">+ Add</a>
     </div>
     <div class="panel customertypecontactphonesitesa-text">
         <div class="table-responsive-custom border">
@@ -28,7 +29,7 @@
                     @forelse($jobCodes as $item)
                     <tr>
                         <td class="site-table-name">
-                            <a href="{{ route('job-codes.show',$item) }}">
+                            <a class ="tech-wo-green" href="{{ route('job-codes.show',$item) }}">
                                 {{ $item->foldername }}
                             </a>
                         </td>
@@ -40,7 +41,7 @@
                             <form class="d-inline" method="POST" action="{{ route('job-codes.destroy',$item) }}" onsubmit="return confirm('Delete this record?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn-action-simple border-0 bg-transparent">Delete</button>
+                                <button class="btn-action-simple">Delete</button>
                             </form>
                         </td>
                     </tr>

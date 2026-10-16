@@ -10,9 +10,9 @@
             <h2 class="page-title font-weight-bold">{{ $part->part_number }}</h2>
             <p class="breadcrumb-text">Parts · Details</p>
         </div>
-        <div>
-            <a href="{{ route('parts.index') }}" class="btn bg-white font-weight-bold">Back</a>
-            <a href="{{ route('parts.edit', $part) }}" class="btn btn-success text-white font-weight-bold">Edit</a>
+        <div class="wo-action-btns">
+            <a href="{{ route('parts.index') }}" class="btn bg-white font-weight-bold btn-back-custom">Back</a>
+            <a href="{{ route('parts.edit', $part) }}" class="btn btn-success text-white font-weight-bold btn-primary-custom">Edit</a>
         </div>
     </div>
 

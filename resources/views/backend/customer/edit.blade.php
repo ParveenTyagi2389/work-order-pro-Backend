@@ -5,6 +5,7 @@
 @section('page-title', 'WorkOrder Pro - Edit Customer Type')
 
 @section('content')
+<div class ="content-area">
 <div>
     <h2 class="page-title font-weight-bold">Edit Customer Type</h2>
     <p class="breadcrumb-text">Update the customer type name.</p>
@@ -26,9 +27,10 @@
     @method('PUT')
     @include('backend.customer._form', ['customerType' => $customerType])
     <div class="display-flex justify-content-end gap-3 mt-4">
-        <a class="btn btn-outline-secondary px-4 py-2 font-weight-bold text-decoration-none"
+        <a class="btn-back-custom"
            href="{{ route('customer-types.show', $customerType) }}">Cancel</a>
-        <button class="btn btn-success px-4 py-2 font-weight-bold text-white" type="submit">Update</button>
+        <button class="btn btn-success text-white font-weight-bold btn-primary-custom" type="submit">Update</button>
     </div>
 </form>
+</div>
 @endsection

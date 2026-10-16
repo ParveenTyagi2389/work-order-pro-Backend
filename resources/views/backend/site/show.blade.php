@@ -28,8 +28,8 @@
             </div>
         </div>
         <div class="display-flex justify-content-end gap-3 mt-4">
-            <a class="btn bg-white font-weight-bold w-fixed-sm" href="{{ route('sites.index') }}">Back</a>
-            <a class="btn btn-success font-weight-bold text-white w-fixed-sm" href="{{ route('sites.edit', $site) }}">Edit</a>
+            <a class="btn-back-custom" href="{{ route('sites.index') }}">Back</a>
+            <a class="btn text-white font-weight-bold btn-primary-custom" href="{{ route('sites.edit', $site) }}">Edit</a>
         </div>
     </div>
 </div>

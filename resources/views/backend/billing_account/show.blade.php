@@ -12,7 +12,7 @@
         </p>
     </div>
 
-    <div class="panel border display-flex acacme-corporationactivecommer-text">
+    <div class="panel border display-flex acacme-corporationactivecommer-text gap-16">
         <div class="avatar-square avatar-square-green display-flex avatar-square-lg panel-div-secondary">
             {{ strtoupper(substr($billTo->bill_name ?? 'BA', 0, 2)) }}
         </div>
@@ -73,8 +73,8 @@
         </div>
     </div>
 
-    <div class="panel border siteaddressactive-woslast-serv-text">
-        <h4 class="font-weight-bold part-details-text">Sites</h4>
+    <div class="panel border siteaddressactive-woslast-serv-text mt-4">
+        <h4 class="font-weight-bold part-details-text p-3 m-0">Sites</h4>
         <div class="table-responsive-custom">
             <table class="table-custom log-idtimestampuseractionentit-text-alt">
                 <thead>
@@ -98,7 +98,7 @@
     </div>
 
     <div class="display-flex create-role-text">
-        <a class="btn-custom btn-outline-secondary border font-weight-bold btn-outline-padding-wide back-action-box text-decoration-none"
+        <a class="btn-custom btn-back-custom text-decoration-none"
            href="{{ route('bill-to.index') }}">Back to Billing Accounts</a>
         <a class="btn btn-success px-4 py-2 font-weight-bold text-white" href="{{ route('bill-to.edit', $billTo) }}">Edit</a>
     </div>

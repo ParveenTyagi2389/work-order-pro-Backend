@@ -37,7 +37,7 @@
                 @forelse ($sites as $site)
                     <tr>
                         <td class="site-table-name">
-                            <a href="{{ route('sites.show', $site) }}">{{ $site->name }}</a>
+                            <a class = "tech-wo-green" href="{{ route('sites.show', $site) }}">{{ $site->name }}</a>
                             <div class="jajohn-admin-text-div-custom">{{ $site->site_id ?? '—' }}</div>
                         </td>
                         <td class="semantic-text-primary">
@@ -51,7 +51,7 @@
                             <a class="btn-action-simple text-decoration-none" href="{{ route('sites.edit', $site) }}">Edit</a>
                             <form action="{{ route('sites.destroy', $site) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this site?');">
                                 @csrf @method('DELETE')
-                                <button class="btn-action-simple text-decoration-none border-0 bg-transparent" type="submit">Delete</button>
+                                <button class="btn border btn-small-padding view-action" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

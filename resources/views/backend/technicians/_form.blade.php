@@ -1,5 +1,5 @@
 <div class="row g-4">
-    <div class="col-md-7">
+    <div class="col-12">
         <div class="panel">
             <h6 class="font-weight-bold mb-3">Technician details</h6>
             <div class="mb-3">
@@ -38,6 +38,6 @@
     </div>
 </div>
 <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('technicians.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">Cancel</a>
-    <button class="btn btn-success font-weight-bold text-white w-fixed-sm" type="submit">{{ isset($technician) ? 'Update Technician' : 'Save Technician' }}</button>
+    <a href="{{ route('technicians.index') }}" class="btn-back-custom   ">Cancel</a>
+    <button class="btn btn-success text-white font-weight-bold btn-primary-custom" type="submit">{{ isset($technician) ? 'Update Technician' : 'Save Technician' }}</button>
 </div>

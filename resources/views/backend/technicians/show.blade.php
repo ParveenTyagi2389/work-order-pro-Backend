@@ -5,7 +5,7 @@
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div><h2 class="page-title font-weight-bold">{{ $technician->name }}</h2><p class="breadcrumb-text">Technicians · Details</p></div>
-        <div class="d-flex gap-2"><a href="{{ route('technicians.index') }}" class="btn bg-white font-weight-bold">Back</a><a href="{{ route('technicians.edit', $technician) }}" class="btn btn-success text-white font-weight-bold">Edit</a></div>
+        <div class="d-flex gap-2"><a href="{{ route('technicians.index') }}" class="btn-back-custom">Back</a><a href="{{ route('technicians.edit', $technician) }}" class="btn-primary-custom">Edit</a></div>
     </div>
     <div class="panel border">
         <div class="row g-4">

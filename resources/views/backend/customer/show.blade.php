@@ -21,7 +21,7 @@
         </p>
     </div>
 
-    <div class="panel border display-flex acacme-corporationactivecommer-text">
+    <div class="panel border display-flex acacme-corporationactivecommer-text gap-16">
         <div class="avatar-square avatar-square-green display-flex avatar-square-lg panel-div-secondary">
         {{ collect(preg_split('/\s+/', trim($customerType->name)))->map(fn($p) => strtoupper(substr($p,0,1)))->take(2)->join('') }}
         </div>
@@ -63,15 +63,15 @@
 </div>
 
 <div class="display-flex create-role-text gap-2 mt-4">
-    <a class="btn btn-outline-secondary border font-weight-bold btn-outline-padding-wide text-decoration-none"
+    <a class="btn-back-custom"
        href="{{ route('customer-types.index') }}">Back</a>
-    <a class="btn btn-success px-4 py-2 font-weight-bold text-white text-decoration-none"
+    <a class="btn btn-success text-white font-weight-bold btn-primary-custom"
        href="{{ route('customer-types.edit', $customerType) }}">Edit</a>
     @if($customerType->sites_count === 0)
         <form method="POST" action="{{ route('customer-types.destroy', $customerType) }}"
               onsubmit="return confirm('Delete this customer type?');">
             @csrf @method('DELETE')
-            <button class="btn btn-outline-danger px-4 py-2 font-weight-bold" type="submit">Delete</button>
+            <button class="btn btn-outline-danger py-2 font-weight-bold" type="submit">Delete</button>
         </form>
     @endif
 </div>

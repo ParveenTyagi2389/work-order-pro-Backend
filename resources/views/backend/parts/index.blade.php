@@ -23,6 +23,7 @@
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom"
                    type="text" name="search" value="{{ request('search') }}"
                    placeholder="Search part number or description">
+                   <i class="fi-rs-search filter-search-icon"></i>
             <button class="btn border btn-small-padding view-action" type="submit">Search</button>
             @if (request()->filled('search'))
                 <a class="btn border btn-small-padding view-action" href="{{ route('parts.index') }}">Clear</a>
@@ -47,7 +48,7 @@
                     @forelse ($parts as $part)
                         <tr>
                             <td class="site-table-name">
-                                <a href="{{ route('parts.show', $part) }}">{{ $part->part_number }}</a>
+                                <a class ="tech-wo-green" href="{{ route('parts.show', $part) }}">{{ $part->part_number }}</a>
                             </td>
                             <td class="semantic-text-primary">{{ $part->description ?: '—' }}</td>
                             <td class="jajohn-admin-text">
@@ -57,7 +58,7 @@
                                       onsubmit="return confirm('Delete this part?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn-action-simple text-decoration-none border-0 bg-transparent" type="submit">Delete</button>
+                                    <button class="btn-action-simple" type="submit">Delete</button>
                                 </form>
                             </td>
                         </tr>

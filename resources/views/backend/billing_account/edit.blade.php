@@ -17,7 +17,7 @@
     @include('backend.billing_account._form', ['billTo' => $billTo, 'primaryEmail' => $primaryEmail])
 
     <div class="display-flex justify-content-end gap-3 mt-4">
-      <a class="btn btn-outline-secondary px-4 py-2 font-weight-bold text-decoration-none"
+      <a class="btn btn-back-custom text-decoration-none"
          href="{{ route('bill-to.index') }}">Cancel</a>
       <button class="btn btn-success px-4 py-2 font-weight-bold text-white" type="submit">Save</button>
     </div>

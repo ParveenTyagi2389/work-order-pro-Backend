@@ -54,7 +54,7 @@
     @endif
 
     <div class="panel display-flex panel-header-padding code-usageactive-text">
-        <form class="display-flex all-statusall-types-text w-100" method="GET" action="{{ route('customer-types.index') }}">
+        <form class="display-flex all-statusall-types-text w-100 align-items-center" method="GET" action="{{ route('customer-types.index') }}">
             <div class="search-input-width search-box-max-width">
                 <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom"
                     name="search" value="{{ $search }}" placeholder="Search customer types..." type="text" />

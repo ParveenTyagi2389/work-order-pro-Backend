@@ -69,6 +69,7 @@ body {
   color: #374151;
   padding-top: 10px;
   padding-bottom: 10px;
+  appearance: auto;
 }
 
 .login-card .form-group {
@@ -103,11 +104,13 @@ body {
   padding: 11px;
   border: 1px solid #078b4d;
   text-decoration: none;
-  max-width: 120px;
   line-height: 18px;
-  width: 100%;
+  width: fit-content;
   text-align: center;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sign-in {
@@ -157,7 +160,13 @@ body {
 .nav-menu {
   padding: 11px 8px;
   overflow-y: auto;
+  height: 100%;
 }
+.drop-menu {
+  width: 100%;
+}
+
+
 
 .sidebar .nav-item {
   display: flex;
@@ -171,6 +180,7 @@ body {
   transition: 0.3s;
   border-left: 3px solid transparent;
 }
+
 
 .nav-item svg path {
   stroke: #64748b;
@@ -310,11 +320,13 @@ body {
   font-weight: 600;
   margin: 0;
   line-height: normal;
+  text-transform: capitalize;
 }
 
 .user-info span {
   font-size: 12px;
   color: #94a3b8;
+  text-transform: capitalize;
 }
 
 .user-profile-dropdown {
@@ -2040,6 +2052,7 @@ input[type="checkbox"].display-none:checked+.day-picker-btn {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 24px;
+  column-gap: 15px;
 }
 
 .create-role-action {
@@ -2715,6 +2728,7 @@ input[type="checkbox"].display-none:checked+.day-picker-btn {
   font-size: 14px;
   padding-right: 24px;
   padding-left: 24px;
+  height: 100%;
 }
 
 .customer-text {
@@ -2735,7 +2749,6 @@ input[type="checkbox"].display-none:checked+.day-picker-btn {
 .viewedit-text-div-custom {
   display: flex;
   gap: 8px;
-  justify-content: flex-end;
 }
 
 .view-action {
@@ -3179,6 +3192,8 @@ select.form-control-custom {
   top: 50%;
   transform: translateY(-50%);
   color: #94a3b8;
+  display: flex;
+  align-items: center;
 }
 
 .filter-search-input {
@@ -4242,6 +4257,7 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 .tech-wo-green {
   color: #059669;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .tech-wo-red {
@@ -4304,7 +4320,9 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
   align-items: center;
   margin-bottom: 14px;
 }
-
+.status-select {
+  width: fit-content;
+}
 .wo-status-select {
   border: 1px solid #d1d5db;
   border-radius: 6px;
@@ -4440,16 +4458,19 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
   font-weight: 600;
   color: #58706a;
   cursor: pointer;
-  max-width: 120px;
-  width: 100%;
+  /* max-width: 120px; */
+  width: fit-content;
   text-align: center;
+  text-decoration: none;
 }
 
 .wo-action-btns {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
-  margin-top: 32px;
+  /* margin-top: 32px; */
+  max-width: 300px;
+  width: 100%;
 }
 
 .tech-avatar-lightgreen {
