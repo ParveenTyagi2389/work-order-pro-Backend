@@ -19,6 +19,7 @@
     <div class="search-action-row">
         <form method="GET" action="{{ route('shapes.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search shapes">
+              <i class="fi-rs-search filter-search-icon"></i>
             <button class="btn border btn-small-padding view-action">Search</button>
         </form>
         <a class="btn-custom btn-primary-custom font-weight-bold create-role-action text-decoration-none" href="{{ route('shapes.create') }}">+ Add</a>
@@ -37,7 +38,7 @@
                     @forelse($shapes as $item)
                     <tr>
                         <td class="site-table-name">
-                            <a href="{{ route('shapes.show',$item) }}">
+                            <a class = "tech-wo-green" href="{{ route('shapes.show',$item) }}">
                                 {{ $item->shape_name }}
                             </a>
                         </td>
@@ -48,7 +49,7 @@
                             <form class="d-inline" method="POST" action="{{ route('shapes.destroy',$item) }}" onsubmit="return confirm('Delete this record?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn-action-simple border-0 bg-transparent">Delete</button>
+                                <button class="btn-action-simple">Delete</button>
                             </form>
                         </td>
                     </tr>

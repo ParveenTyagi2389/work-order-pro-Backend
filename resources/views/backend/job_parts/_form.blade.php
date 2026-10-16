@@ -65,8 +65,8 @@
         </div>
     </div>
     <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('job-parts.index') }}" class="btn bg-white font-weight-bold btn-back-custom">Cancel</a>
-    <button type="submit" class="btn btn-success text-white font-weight-bold btn-primary-custom">
+    <a href="{{ route('job-parts.index') }}" class="btn-back-custom">Cancel</a>
+    <button type="submit" class="btn-primary-custom">
         {{ isset($jobPart) ? 'Update Job Part' : 'Save Job Part' }}
     </button>
 </div>

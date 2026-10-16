@@ -56,8 +56,8 @@
     </div>
 </div>
 <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('work-orders.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">Cancel</a>
-    <button type="submit" class="btn btn-success font-weight-bold text-white w-fixed-sm">
+    <a href="{{ route('work-orders.index') }}" class="btn-back-custom">Cancel</a>
+    <button type="submit" class="btn-primary-custom">
         {{ isset($workOrder) ? 'Update Work Order' : 'Save Work Order' }}
     </button>
 </div>

@@ -16,9 +16,9 @@
     @include('backend.billing_account._form')
 
     <div class="display-flex justify-content-end gap-3 mt-4">
-      <a class="btn btn-back-custom text-decoration-none"
+      <a class="btn-back-custom"
          href="{{ route('bill-to.index') }}">Cancel</a>
-      <button class="btn btn-success px-4 py-2 font-weight-bold text-white" type="submit">Save</button>
+      <button class="btn-primary-custom" type="submit">Save</button>
     </div>
   </form>
 </div>

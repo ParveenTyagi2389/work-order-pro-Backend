@@ -13,4 +13,4 @@
 <textarea name="description" rows="4" class="form-control form-control-styled textarea-styled-desc">{{ old('description', $jobFlatRate->description ?? '') }}</textarea>
 @error('description')<div class="text-danger small">{{ $message }}</div>@enderror</div>
 </div></div></div>
-<div class="display-flex justify-content-end gap-3 mt-4 mb-5"><a href="{{ route('job-flat-rates.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">Cancel</a><button type="submit" class="btn btn-success font-weight-bold text-white w-fixed-sm">{{ isset($jobFlatRate) ? 'Update' : 'Save' }} Job Flat Rates</button></div>
+<div class="display-flex justify-content-end gap-3 mt-4 mb-5"><a href="{{ route('job-flat-rates.index') }}" class="btn-back-custom">Cancel</a><button type="submit" class="btn-primary-custom">{{ isset($jobFlatRate) ? 'Update' : 'Save' }} Job Flat Rates</button></div>

@@ -7,11 +7,11 @@
         <h2 class="page-title font-weight-bold">
             {{ $shape->shape_name }}
         </h2>
-        <div>
-            <a href="{{ route('shapes.index') }}" class="btn bg-white font-weight-bold">
+        <div class="display-flex gap-3">
+            <a href="{{ route('shapes.index') }}" class="btn-back-custom">
                 Back
             </a>
-            <a href="{{ route('shapes.edit',$shape) }}" class="btn btn-success text-white font-weight-bold">
+            <a href="{{ route('shapes.edit',$shape) }}" class="btn-primary-custom">
                 Edit
             </a>
         </div>

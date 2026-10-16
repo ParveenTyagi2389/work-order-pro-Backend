@@ -8,7 +8,7 @@
             <h2 class="page-title font-weight-bold">Work Order {{ $workOrder->customer_work_order ?: ('WO-'.$workOrder->id) }}</h2>
             <p class="breadcrumb-text">Work Orders · Details</p>
         </div>
-        <div class="wo-action-btns"><a href="{{ route('work-orders.index') }}" class="btn bg-white font-weight-bold btn-back-custom">Back</a> <a href="{{ route('work-orders.edit',$workOrder) }}" class="btn btn-success text-white font-weight-bold btn-primary-custom">Edit</a></div>
+        <div class="wo-action-btns"><a href="{{ route('work-orders.index') }}" class="btn-back-custom">Back</a> <a href="{{ route('work-orders.edit',$workOrder) }}" class="btn-primary-custom">Edit</a></div>
     </div>
     <div class="panel border">
         <div class="row g-4">

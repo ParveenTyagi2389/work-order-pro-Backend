@@ -1,5 +1,5 @@
 <div class="row g-4">
-    <div class="col-md-7">
+    <div class="col-12">
         <div class="panel">
             <h6 class="font-weight-bold mb-3">
                 Shapes details
@@ -22,8 +22,8 @@
     </div>
 </div>
 <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('shapes.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">Cancel</a>
-    <button class="btn btn-success font-weight-bold text-white w-fixed-sm" type="submit">
+    <a href="{{ route('shapes.index') }}" class="btn-back-custom">Cancel</a>
+    <button class="btn-primary-custom" type="submit">
         {{ isset($shape) ? 'Update' : 'Save' }}
     </button>
 </div>

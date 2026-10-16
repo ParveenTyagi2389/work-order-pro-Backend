@@ -19,6 +19,7 @@
     <div class="search-action-row">
         <form method="GET" action="{{ route('job-parts.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search part number or work order">
+            <i class="fi-rs-search filter-search-icon"></i>
             <button class="btn border btn-small-padding view-action" type="submit">Search</button>
         </form>
         <a class="btn-custom btn-primary-custom font-weight-bold create-role-action text-decoration-none" href="{{ route('job-parts.create') }}">+ Add Job Part</a>
@@ -39,18 +40,18 @@
                 <tbody>
                     @forelse($jobParts as $item)
                         <tr>
-                            <td><a href="{{ route('job-parts.show',$item) }}">{{ $item->workOrder->customer_work_order ?? ('WO-'.$item->work_order_id) }}</a></td>
+                            <td><a class="tech-wo-green" href="{{ route('job-parts.show',$item) }}">{{ $item->workOrder->customer_work_order ?? ('WO-'.$item->work_order_id) }}</a></td>
                             <td>{{ $item->part->part_number ?? ('Part #'.$item->part_id) }}</td>
                             <td>{{ $item->part->description ?? '—' }}</td>
                             <td>{{ number_format((float)$item->quantity,2) }}</td>
                             <td>{{ $item->ordered ? 'Yes' : 'No' }}</td>
                             <td>
-                                <a href="{{ route('job-parts.show',$item) }}">View</a> |
-                                <a href="{{ route('job-parts.edit',$item) }}">Edit</a> |
+                                <a class = "btn-action-simple text-decoration-none" href="{{ route('job-parts.show',$item) }}">View</a> 
+                                <a class = "btn-action-simple text-decoration-none" href="{{ route('job-parts.edit',$item) }}">Edit</a>
                                 <form class="d-inline" method="POST" action="{{ route('job-parts.destroy',$item) }}" onsubmit="return confirm('Delete this job part?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">Delete</button>
+                                    <button class = "btn-action-simple" type="submit">Delete</button>
                                 </form>
                             </td>
                         </tr>

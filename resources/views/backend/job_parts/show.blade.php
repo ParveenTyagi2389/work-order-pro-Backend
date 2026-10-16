@@ -7,11 +7,11 @@
         <h2 class="page-title font-weight-bold">
             Job Part Details
         </h2>
-        <div>
-            <a href="{{ route('job-parts.index') }}" class="btn bg-white">
+        <div class="display-flex gap-3">
+            <a href="{{ route('job-parts.index') }}" class="btn-back-custom">
                 Back
             </a>
-            <a href="{{ route('job-parts.edit',$jobPart) }}" class="btn btn-success text-white">
+            <a href="{{ route('job-parts.edit',$jobPart) }}" class="btn-primary-custom">
                 Edit
             </a>
         </div>

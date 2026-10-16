@@ -98,9 +98,9 @@
     </div>
 
     <div class="display-flex create-role-text">
-        <a class="btn-custom btn-back-custom text-decoration-none"
+        <a class="btn-back-custom"
            href="{{ route('bill-to.index') }}">Back to Billing Accounts</a>
-        <a class="btn btn-success px-4 py-2 font-weight-bold text-white" href="{{ route('bill-to.edit', $billTo) }}">Edit</a>
+        <a class="btn-primary-custom" href="{{ route('bill-to.edit', $billTo) }}">Edit</a>
     </div>
 </div>
 @endsection

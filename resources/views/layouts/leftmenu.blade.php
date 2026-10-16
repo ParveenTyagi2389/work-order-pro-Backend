@@ -52,7 +52,7 @@
         Invoices
       </a> --}}
       <a class="nav-item {{ request()->routeIs('technicians.*') ? 'active' : '' }}" href="{{ route('technicians.index') }}">
-        <img alt="" src="./images/technician.svg" />
+        <img alt="" src="/images/technician.svg" />
         Technicians
       </a>
       <a class="nav-item {{ request()->routeIs('customer-types.*') ? 'active' : '' }}" href="{{ route('customer-types.index') }}">
