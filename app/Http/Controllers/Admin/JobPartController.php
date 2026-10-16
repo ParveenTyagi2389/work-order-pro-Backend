@@ -23,7 +23,10 @@ class JobPartController extends Controller
             ->orderByDesc('id')->paginate(10)->withQueryString();
         return view('backend.job_parts.index', compact('jobParts'));
     }
-    public function create(): View { return view('backend.job_parts.create', $this->options()); }
+    public function create(): View
+    { 
+        return view('backend.job_parts.create', $this->options());
+    }
     public function store(JobPartRequest $request): RedirectResponse
     {
         $data = $request->validated();

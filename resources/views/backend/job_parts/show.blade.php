@@ -4,25 +4,59 @@
 @section('content')
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="page-title font-weight-bold">Job Part Details</h2>
-        <div class="wo-action-btns"><a href="{{ route('job-parts.index') }}" class="btn bg-white font-weight-bold btn-back-custom">Back</a> <a href="{{ route('job-parts.edit',$jobPart) }}" class="btn btn-success text-white font-weight-bold btn-primary-custom">Edit</a></div>
+        <h2 class="page-title font-weight-bold">
+            Job Part Details
+        </h2>
+        <div>
+            <a href="{{ route('job-parts.index') }}" class="btn bg-white">
+                Back
+            </a>
+            <a href="{{ route('job-parts.edit',$jobPart) }}" class="btn btn-success text-white">
+                Edit
+            </a>
+        </div>
     </div>
     <div class="panel border">
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="text-muted mb-1">Work order</div><strong>{{ $jobPart->workOrder->customer_work_order ?? ('WO-'.$jobPart->work_order_id) }}</strong>
+                <div class="text-muted mb-1">
+                    Work order
+                </div>
+                <strong>
+                    {{ $jobPart->workOrder->customer_work_order ?? ('WO-'.$jobPart->work_order_id) }}
+                </strong>
             </div>
             <div class="col-md-4">
-                <div class="text-muted mb-1">Part number</div><strong>{{ $jobPart->part->part_number ?? ('Part #'.$jobPart->part_id) }}</strong>
+                <div class="text-muted mb-1">
+                    Part number
+                </div>
+                <strong>
+                    {{ $jobPart->part->part_number ?? ('Part #'.$jobPart->part_id) }}
+                </strong>
             </div>
             <div class="col-md-4">
-                <div class="text-muted mb-1">Quantity</div><strong>{{ number_format((float)$jobPart->quantity,2) }}</strong>
+                <div class="text-muted mb-1">
+                    Quantity
+                </div>
+                <strong>
+                    {{ number_format((float)$jobPart->quantity,2) }}
+                </strong>
             </div>
             <div class="col-12">
-                <div class="text-muted mb-1">Description</div>{{ $jobPart->part->description ?? '—' }}
+                <div class="text-muted mb-1">
+                    Description
+                </div>
+                <p>
+                    {{ $jobPart->part->description ?? '—' }}
+                </p>
             </div>
             <div class="col-md-4">
-                <div class="text-muted mb-1">Ordered</div><strong>{{ $jobPart->ordered ? 'Yes' : 'No' }}</strong>
+                <div class="text-muted mb-1">
+                    Ordered
+                </div>
+                <strong>
+                    {{ $jobPart->ordered ? 'Yes' : 'No' }}
+                </strong>
             </div>
         </div>
     </div>

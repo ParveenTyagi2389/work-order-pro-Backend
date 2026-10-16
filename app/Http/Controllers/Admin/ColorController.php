@@ -16,14 +16,23 @@ class ColorController extends Controller
             ->orderBy('color_name')->paginate(10)->withQueryString();
         return view('backend.colors.index',compact('colors'));
     }
-    public function create(): View { return view('backend.colors.create'); }
+    public function create(): View 
+    { 
+        return view('backend.colors.create'); 
+    }
     public function store(ColorRequest $request): RedirectResponse
     {
         Color::create($request->validated());
         return redirect()->route('colors.index')->with('success','Color created successfully.');
     }
-    public function show(Color $color): View { return view('backend.colors.show',compact('color')); }
-    public function edit(Color $color): View { return view('backend.colors.edit',compact('color')); }
+    public function show(Color $color): View 
+    { 
+        return view('backend.colors.show',compact('color'));
+    }
+    public function edit(Color $color): View
+    { 
+        return view('backend.colors.edit',compact('color'));
+    }
     public function update(ColorRequest $request, Color $color): RedirectResponse
     {
         $color->update($request->validated());
