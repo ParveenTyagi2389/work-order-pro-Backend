@@ -40,7 +40,8 @@ class JobReimbursementController extends Controller {
     }
     public function update(JobReimbursementRequest $request,JobReimbursement $job_reimbursement) 
     {
-        $job_reimbursement->update($request->validated());return redirect()->route('job-reimbursements.show',$job_reimbursement)->with('success','Reimbursement updated successfully.');
+        $job_reimbursement->update($request->validated());
+        return redirect()->route('job-reimbursements.show',$job_reimbursement)->with('success','Reimbursement updated successfully.');
     }
     public function destroy(JobReimbursement $job_reimbursement) 
     {
