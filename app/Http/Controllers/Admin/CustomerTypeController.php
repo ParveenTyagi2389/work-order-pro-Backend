@@ -49,9 +49,7 @@ class CustomerTypeController extends Controller
     {
         $customerType = CustomerType::create($request->validated());
 
-        return redirect()
-            ->route('customer-types.show', $customerType)
-            ->with('success', 'Customer type created successfully.');
+        return redirect()->route('customer-types.show', $customerType)->with('success', 'Customer type created successfully.');
     }
 
     public function show(CustomerType $customerType): View
@@ -96,8 +94,6 @@ class CustomerTypeController extends Controller
             );
         }
 
-        return redirect()
-            ->route('customer-types.index')
-            ->with('success', 'Customer type deleted successfully.');
+        return redirect()->route('customer-types.index')->with('success', 'Customer type deleted successfully.');
     }
 }

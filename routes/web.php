@@ -5,7 +5,7 @@ use App\Http\Controllers\Management\{PermissionsController, RoleController, User
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WorkSiteController;
 use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController,JobCodeController, ColorController,ShapeController, PartController, WorkOrderController,
-JobPartController,JobBillableController,JobFlatRateController,JobReimbursementController};
+JobPartController,JobBillableController,JobFlatRateController,JobReimbursementController,JobPictureController, StorePictureController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
 
 
@@ -86,7 +86,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('job-billables', JobBillableController::class)->parameters(['job-billables'=>'job_billable']);
     Route::resource('job-flat-rates', JobFlatRateController::class)->parameters(['job-flat-rates'=>'job_flat_rate']);
     Route::resource('job-reimbursements', JobReimbursementController::class)->parameters(['job-reimbursements'=>'job_reimbursement']);
-
+    Route::resource('job-pictures', JobPictureController::class)->parameters(['job-pictures' => 'job_picture']);
+    Route::resource('store-pictures', StorePictureController::class)->parameters(['store-pictures' => 'store_picture']);
 
 });
 
