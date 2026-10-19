@@ -69,12 +69,27 @@
         </svg>
         Sites
       </a>
+      <a class="nav-item {{ request()->routeIs('job-pictures.*') ? 'active' : '' }}" href="{{ route('job-pictures.index') }}">
+      <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M14 18v-2l-3-3H4l-3 3v2m6-9a3 3 0 1 0 0-7 3 3 0 0 0 0 7m12 9v-2l-2-3M13 3a3 3 0 0 1 0 6"
+            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+        </svg>
+        Job Pictures
+      </a>
+      <a class="nav-item {{ request()->routeIs('store-pictures.*') ? 'active' : '' }}" href="{{ route('store-pictures.index') }}">
+       <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
+          <path d="M14 18v-2l-3-3H4l-3 3v2m6-9a3 3 0 1 0 0-7 3 3 0 0 0 0 7m12 9v-2l-2-3M13 3a3 3 0 0 1 0 6"
+            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+        </svg>
+        Store Pictures
+      </a>
       <div class="dropdown">
         <a class="nav-item dropdown-toggle  {{ request()->routeIs('job-codes.*') ? 'active' : '' }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="3" y="7" width="18" height="13" rx="2" /> <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /> <path d="M3 12h18" /> <path d="M10 12v2h4v-2" />
           </svg>
           Job Management
         </a>
+        
 
         <ul class="dropdown-menu drop-menu">
           <li> <a class="nav-item {{ request()->routeIs('job-codes.*') ? 'active' : '' }}" href="{{ route('job-codes.index') }}">
@@ -154,7 +169,7 @@
         </ul>
       </div>
 
-
+     
       {{--
 
       <a class="nav-item" href="access-level.html">
