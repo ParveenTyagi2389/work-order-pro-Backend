@@ -31,40 +31,31 @@ class WorkOrderController extends Controller {
             ->orderByDesc('job_created_at')->orderByDesc('id')->paginate(10)->withQueryString();
         return view('backend.work_orders.index', compact('workOrders'));
     }
-    public function create(): View
-    {
-        return view('backend.work_orders.create', $this->formOptions());
-    }
-    public function store(WorkOrderRequest $request): RedirectResponse 
-    {
+    public function create(): View { return view('backend.work_orders.create', $this->formOptions()); }
+    public function store(WorkOrderRequest $request): RedirectResponse {
         $data = $request->validated();
         foreach (['fuel_reimbursement','serviced','billed'] as $flag) $data[$flag] = $request->boolean($flag);
         $workOrder = WorkOrder::create($data);
         return redirect()->route('work-orders.show',$workOrder)->with('success','Work order created successfully.');
     }
-    public function show(WorkOrder $work_order): View 
-    {
+    public function show(WorkOrder $work_order): View {
         $work_order->load(['site','technician','jobCode']);
         return view('backend.work_orders.show',['workOrder'=>$work_order]);
     }
-    public function edit(WorkOrder $work_order): View 
-    {
+    public function edit(WorkOrder $work_order): View {
         return view('backend.work_orders.edit', array_merge(['workOrder'=>$work_order],$this->formOptions()));
     }
-    public function update(WorkOrderRequest $request, WorkOrder $work_order): RedirectResponse 
-    {
+    public function update(WorkOrderRequest $request, WorkOrder $work_order): RedirectResponse {
         $data = $request->validated();
         foreach (['fuel_reimbursement','serviced','billed'] as $flag) $data[$flag] = $request->boolean($flag);
         $work_order->update($data);
         return redirect()->route('work-orders.show',$work_order)->with('success','Work order updated successfully.');
     }
-    public function destroy(WorkOrder $work_order): RedirectResponse 
-    {
+    public function destroy(WorkOrder $work_order): RedirectResponse {
         $work_order->delete();
         return redirect()->route('work-orders.index')->with('success','Work order deleted successfully.');
     }
-    private function formOptions(): array
-    {
+    private function formOptions(): array {
         return [
             'sites'=>Site::orderBy('name')->get(),
             'technicians'=>Technician::orderBy('name')->get(),
