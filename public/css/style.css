@@ -111,11 +111,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 120px; 
 }
-
-.sign-in {
-  width: 100%;
-  max-width: 100%;
+.alert-success {
+    background-color: #ffdcdc;
+    color: #ff2222;
+    border: 1px solid #ff2222;
 }
 
 .btn-primary-custom:hover {
@@ -830,7 +831,7 @@ body {
   padding: 16px;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 4px;
-  text-align: center;
+  text-align: left;
   background-color: #f1f5f9;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -4462,6 +4463,7 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
   width: fit-content;
   text-align: center;
   text-decoration: none;
+  min-width: 120px;
 }
 
 .wo-action-btns {
