@@ -163,13 +163,12 @@ body {
   overflow-y: auto;
   height: 100%;
 }
+
 .drop-menu {
   width: 100%;
   inset: unset !important;
   transform: translate3d(0px, 0px, 0px) !important;
 }
-
-
 
 .sidebar .nav-item {
   display: flex;
