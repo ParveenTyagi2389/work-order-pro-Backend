@@ -19,6 +19,7 @@
     <div class="search-action-row">
         <form method="GET" action="{{ route('job-pictures.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search records">
+            <i class="fi-rs-search filter-search-icon"></i>
             <button class="btn border btn-small-padding view-action" type="submit">
                 Search
             </button>
