@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>WorkOrder Pro - Admin Login</title>
+  <link rel="icon" type="image/svg+xml" href="{{ asset('work-order2.svg') }}">
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
   <link href="{{ asset('css/uicons-regular-straight.css') }}" rel="stylesheet"/>
   <link href="{{ asset('css/uicons-solid-rounded.css') }}" rel="stylesheet"/>
