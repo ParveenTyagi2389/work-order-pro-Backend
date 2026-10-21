@@ -77,7 +77,7 @@
         <div class="dropdown user-profile-dropdown">
           <div aria-expanded="false" class="display-flex cursor-pointer sksarah-kimadmin-text gap-8"
             data-bs-toggle="dropdown">
-            {{-- <div class="user-avatar" title="Admin User">SK</div> --}}
+             <div class="user-avatar" title="Admin User">SK</div> 
             <div class="user-info">
              
               <p>{{ Auth::user()->name }}</p>
