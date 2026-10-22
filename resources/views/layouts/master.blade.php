@@ -25,13 +25,19 @@
    @yield('content')
   </main>
 
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- jQuery Validation Plugin CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
   <script
         src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin="">
-    </script>
-   @stack('scripts')
-@yield('script')
+  </script>
+  @stack('scripts')
+  @yield('script')
 </body>
 
 

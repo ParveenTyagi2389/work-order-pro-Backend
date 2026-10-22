@@ -11,9 +11,7 @@
                class="form-control-styled form-control @error('name') is-invalid @enderror"
                type="text"
                value="{{ old('name', $customerType->name ?? '') }}"
-               maxlength="255"
-               required
-               autofocus />
+               maxlength="255" />
         @error('name')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
