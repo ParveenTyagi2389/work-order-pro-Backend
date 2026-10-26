@@ -1,6 +1,6 @@
 @csrf
 <div class="panel border role-panel mb-4">
-    <h4 class="font-weight-bold text-success text-uppercase mb-4">CUSTOMER TYPE INFORMATION</h4>
+    <h5 class="font-weight-bold text-success text-uppercase mb-4">CUSTOMER TYPE INFORMATION</h5>
     <h5 class="font-weight-bold mb-3 mt-4">Customer type</h5>
     <div class="mb-3">
         <label class="form-label-custom font-weight-bold" for="name">

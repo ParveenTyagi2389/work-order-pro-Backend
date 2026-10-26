@@ -41,7 +41,7 @@
     @endif
 
     <div class="panel display-flex panel-header-padding code-usageactive-text">
-        <form method="GET" action="{{ route('bill-to.index') }}" class="display-flex all-statusall-types-text">
+        <form method="GET" action="{{ route('bill-to.index') }}" class="display-flex all-statusall-types-text gap-16 w-100">
             <div class="search-input-width search-box-max-width">
                 <input
                     class="form-control-custom custom-search-padding search-icon-wrapper-input-custom"

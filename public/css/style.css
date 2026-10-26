@@ -113,6 +113,9 @@ body {
   justify-content: center;
   min-width: 120px; 
 }
+.btn-primary-custom.sign-in {
+  min-width: 100%;
+}
 .alert-success {
     background-color: #ffdcdc;
     color: #ff2222;
@@ -271,7 +274,7 @@ body {
 .page-title {
   font-size: 18px;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 5px;
   color: #1d293d;
 }
 
@@ -722,6 +725,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: #374151;
+  margin-bottom: 8px;
 }
 
 .page-title-custom {
