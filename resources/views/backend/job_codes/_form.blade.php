@@ -9,7 +9,7 @@
                     Job code name 
                     <span class="text-danger">*</span>
                 </label>
-                <input class="form-control form-control-styled form-input-padded layout-input-variant" name="foldername" value="{{ old('foldername', $jobCode->foldername ?? '') }}" maxlength="255" required>
+                <input class="form-control form-control-styled form-input-padded layout-input-variant" name="foldername" value="{{ old('foldername', $jobCode->foldername ?? '') }}" maxlength="255" >
                 @error('foldername')
                 <div class="text-danger small">
                     {{ $message }}
@@ -20,7 +20,7 @@
                 <label class="form-label form-label-custom">
                     Color *
                 </label>
-                <select name="foldercolor" class="form-control form-control-styled form-input-padded layout-input-variant" required>
+                <select name="foldercolor" class="form-control form-control-styled form-input-padded layout-input-variant" >
                     <option value="">Select color</option>
                     @foreach($colors as $option)
                         <option value="{{ $option->color_name }}" @selected(old('foldercolor',$jobCode->foldercolor ?? '') === $option->color_name)>

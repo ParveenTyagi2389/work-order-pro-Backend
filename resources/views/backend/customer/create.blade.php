@@ -12,7 +12,7 @@
     <p class="breadcrumb-text">Create a customer type used to classify Sites.</p>
 </div>
 
-<form method="POST" action="{{ route('customer-types.store') }}">
+<form method="POST" action="{{ route('customer-types.store') }}" id="customerTypeForm">
     @include('backend.customer._form')
     <div class="display-flex justify-content-end gap-3 mt-4">
         <a class="btn bg-white font-weight-bold btn-back-custom"
@@ -22,3 +22,44 @@
 </form>
 </div>
 @endsection
+
+@section('script')
+<script>
+$(function () {
+    $("#customerTypeForm").validate({
+        rules: {
+            name: {
+                required: true
+            }
+        },
+
+        messages: {
+            name: {
+                required: "Please enter a customer type."
+            }
+        },
+           
+        errorElement: "div",
+
+        errorClass: "text-danger small",
+
+        errorPlacement: function (error, element) {
+            error.insertAfter(element);
+        },
+
+        highlight: function (element) {
+            $(element).addClass("is-invalid");
+        },
+
+        unhighlight: function (element) {
+            $(element).removeClass("is-invalid");
+        },
+
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+});
+</script>
+@endsection
+
