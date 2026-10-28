@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Edit Color')
-@section('page-title','WorkOrder Pro - Edit Color')
+@section('page-title','Edit Color')
 @section('content')
 <div class="content-area">
     <div class="mb-4"><h2 class="page-title font-weight-bold">Edit Color</h2></div>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Add Job Code')
-@section('page-title','WorkOrder Pro - Add Job Code')
+@section('page-title','Add Job Code')
 @section('content')
 <div class="content-area">
     <div class="mb-4">

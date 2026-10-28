@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\WorkSiteController;
 use App\Http\Controllers\Admin\{SiteController, CustomerTypeController, TechnicianController,BillToController,JobCodeController, ColorController,ShapeController, PartController, WorkOrderController,
 JobPartController,JobBillableController,JobFlatRateController,JobReimbursementController,JobPictureController, StorePictureController, TechnicianPayrollController};
 use Spatie\LaravelPackageTools\Concerns\Package\HasViewComposers;
+use App\Http\Controllers\{InvoiceController, InvoicePdfController};
 
 
 Route::redirect('/', '/login');
@@ -90,7 +91,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('store-pictures', StorePictureController::class)->parameters(['store-pictures' => 'store_picture']);
     Route::resource('technician-payroll', TechnicianPayrollController::class)->parameters(['technician-payroll'=>'technician_payroll']);
 
-});
+    Route::get('/invoices/export/csv', [InvoiceController::class, 'exportCsv'])->name('invoices.export');
+    Route::post('/invoices/{invoice}/send', [InvoiceController::class, 'send'])->name('invoices.send');
+    Route::get('/invoices/{invoice}/pdf', [InvoicePdfController::class, 'show'])->name('invoices.pdf');
+    Route::resource('invoices', InvoiceController::class);
+    });
 
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Colors')
-@section('page-title','WorkOrder Pro - Colors')
+@section('page-title','Colors')
 @section('content')
 <div class="content-area">
 @if(session('success'))

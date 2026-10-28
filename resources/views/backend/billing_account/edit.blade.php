@@ -2,7 +2,7 @@
 
 @section('topbar-title', 'Edit Billing Account')
 
-@section('page-title', 'WorkOrder Pro - Edit Billing Account')
+@section('page-title', 'Edit Billing Account')
 
 @section('content')
 <div class="content-area">

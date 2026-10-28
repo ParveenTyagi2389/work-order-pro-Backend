@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('topbar-title', 'Billing Account')
-@section('page-title', 'WorkOrder Pro - Billing Account')
+@section('page-title', 'Billing Account')
 
 @section('content')
 <div class="content-area">

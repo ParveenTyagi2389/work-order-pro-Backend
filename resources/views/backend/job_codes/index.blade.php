@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Job Codes')
-@section('page-title','WorkOrder Pro - Job Codes')
+@section('page-title','Job Codes')
 @section('content')
 <div class="content-area">
     @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif

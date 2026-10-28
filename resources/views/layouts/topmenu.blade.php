@@ -7,7 +7,9 @@
               stroke-width="1.7"></path>
           </svg>
         </label>
-        <h1 class="page-title">Dashboard</h1>
+        <h1 class="page-title">
+          @yield('page-title', 'Dashboard')
+        </h1>
       </div>
       <div class="topbar-right">
         <div class="dropdown">

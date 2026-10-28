@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Job Billing Details')
-@section('page-title','WorkOrder Pro - Job Billing Details')
+@section('page-title','Job Billing Details')
 @section('content')
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-4">

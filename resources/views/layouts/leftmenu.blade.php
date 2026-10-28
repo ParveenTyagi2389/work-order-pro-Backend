@@ -55,6 +55,10 @@
         <img alt="" src="/images/technician.svg" />
         Technicians
       </a>
+       <a class="nav-item {{ request()->routeIs('technician-payroll.*') ? 'active' : '' }}" href="{{ route('technician-payroll.index') }}">
+        <img alt="" src="/images/technician.svg" />
+        Technicians payroll
+      </a>
       <a class="nav-item {{ request()->routeIs('customer-types.*') ? 'active' : '' }}" href="{{ route('customer-types.index') }}">
         <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
           <path d="M14 18v-2l-3-3H4l-3 3v2m6-9a3 3 0 1 0 0-7 3 3 0 0 0 0 7m12 9v-2l-2-3M13 3a3 3 0 0 1 0 6"

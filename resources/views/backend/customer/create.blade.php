@@ -2,7 +2,7 @@
 
 @section('topbar-title', 'Add Customer Type')
 
-@section('page-title', 'WorkOrder Pro - Add Customer Type')
+@section('page-title', 'Add Customer Type')
 
 
 @section('content')

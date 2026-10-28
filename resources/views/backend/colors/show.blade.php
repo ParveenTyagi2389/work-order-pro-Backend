@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Colors Details')
-@section('page-title','WorkOrder Pro - Colors Details')
+@section('page-title','Colors Details')
 @section('content')
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-4">

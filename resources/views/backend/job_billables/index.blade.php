@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topbar-title','Job Billing')
-@section('page-title','WorkOrder Pro - Job Billing')
+@section('page-title','Job Billing')
 @section('content')
 <div class="content-area">
     @if(session('success'))
