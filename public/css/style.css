@@ -911,7 +911,7 @@ body {
   max-width: fit-content;
   width: 100%;
 }
-
+ 
 .form-control-custom {
   width: 100%;
   padding: 11px 16px;
@@ -922,7 +922,7 @@ body {
   background-color: #fff;
   outline: 0;
   transition: border-color 0.3s;
-}
+} 
 
 .form-control-custom:focus {
   border-color: #088e3b;
