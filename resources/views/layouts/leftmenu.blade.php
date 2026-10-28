@@ -87,91 +87,144 @@
         </svg>
         Store Pictures
       </a>
+      
+      @php
+          $isJobManagementActive = request()->routeIs(
+              'job-codes.*',
+              'colors.*',
+              'shapes.*',
+              'parts.*',
+              'job-parts.*',
+              'job-flat-rates.*'
+          );
+      @endphp
+
       <div class="dropdown">
-        <a class="nav-item dropdown-toggle  {{ request()->routeIs('job-codes.*') ? 'active' : '' }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="3" y="7" width="18" height="13" rx="2" /> <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /> <path d="M3 12h18" /> <path d="M10 12v2h4v-2" />
-          </svg>
-          Job Management
-        </a>
-        
 
-        <ul class="dropdown-menu drop-menu">
-          <li> <a class="nav-item {{ request()->routeIs('job-codes.*') ? 'active' : '' }}" href="{{ route('job-codes.index') }}">
-              <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
-                <g clip-path="url(#a)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                  <path d="M10 2H3L2 3v7l7 8h3l6-6V9z"></path>
-                  <path d="M6 7V6z" fill="currentColor"></path>
-                </g>
-                <defs>
-                  <clippath id="a">
-                    <path d="M0 0h20v20H0z" fill="#fff"></path>
-                  </clippath>
-                </defs>
-              </svg>
-              Job Codes
-            </a></li>
-          <li>
-            <a class="nav-item dropdown-item {{ request()->routeIs('colors.*') ? 'active' : '' }}" href="{{ route('colors.index') }}">
-              <svg aria-hidden="true" fill="none" height="20" width="20"
-                viewBox="0 0 20 20">
-                <path
-                  d="M10 2a8 8 0 1 0 0 16h1.2a2 2 0 0 0 1.5-3.3
-                  1.5 1.5 0 0 1 1.1-2.5H15a3 3 0 0 0 3-3
-                  7.5 7.5 0 0 0-8-7.2Z"
+          {{-- Job Management parent menu --}}
+          <a class="nav-item dropdown-toggle {{ $isJobManagementActive ? 'active' : '' }}"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="{{ $isJobManagementActive ? 'true' : 'false' }}">
+
+              <svg xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
                   stroke="currentColor"
-                  stroke-width="1.7"
+                  stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <circle cx="6.5" cy="9" r="1" fill="currentColor" />
-                <circle cx="9" cy="5.5" r="1" fill="currentColor" />
-                <circle cx="13" cy="6.5" r="1" fill="currentColor" />
-                <circle cx="15" cy="9.5" r="1" fill="currentColor" />
+                  stroke-linejoin="round">
+                  <rect x="3" y="7" width="18" height="13" rx="2" />
+                  <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  <path d="M3 12h18" />
+                  <path d="M10 12v2h4v-2" />
               </svg>
-              Colors
-            </a>
-          </li>
-          <li>
-            <a class="nav-item dropdown-item {{ request()->routeIs('shapes.*') ? 'active' : '' }}" href="{{ route('shapes.index') }}">
-              <svg aria-hidden="true" fill="none" height="20" width="20"
-                viewBox="0 0 20 20">
-                <circle cx="5" cy="5" r="3" stroke="currentColor"
-                  stroke-width="1.7" />
-                <rect x="11" y="2" width="6" height="6" rx="1"
-                  stroke="currentColor" stroke-width="1.7" />
-                <path d="M10 18 5.5 10h9L10 18Z"
-                  stroke="currentColor" stroke-width="1.7"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              Shapes
-            </a>
-          </li>
-          <li>
-            <a class="nav-item dropdown-item {{ request()->routeIs('parts.*') ? 'active' : '' }}" href="{{ route('parts.index') }}">
-              <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
-                <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
-              </svg>
-              Parts
-            </a>
-          </li>
-          <li>
-            <a class="nav-item dropdown-item {{ request()->routeIs('job-parts.*') ? 'active' : '' }}" href="{{ route('job-parts.index') }}">
-              <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
-                <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
-              </svg>
-              Job Parts
-            </a>
-          </li>
-          <li>
 
-            <a class="nav-item dropdown-item {{ request()->routeIs('job-flat-rates.*') ? 'active' : '' }}" href="{{ route('job-flat-rates.index') }}">
-              <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
-                <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2" stroke="currentColor" stroke-width="1.3"></path>
-              </svg>
-              Job Flat Rates
-            </a>
-          </li>
-        </ul>
+              Job Management
+          </a>
+
+          {{-- Submenu --}}
+          <ul class="dropdown-menu drop-menu {{ $isJobManagementActive ? 'show' : '' }}">
+
+              {{-- Job Codes --}}
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('job-codes.*') ? 'active' : '' }}"
+                    href="{{ route('job-codes.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          viewBox="0 0 20 20" width="20">
+                          <g stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                              <path d="M10 2H3L2 3v7l7 8h3l6-6V9z" />
+                          </g>
+                          <circle cx="6" cy="6" r="1" fill="currentColor" />
+                      </svg>
+                      Job Codes
+                  </a>
+              </li>
+
+              {{-- Colors --}}
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('colors.*') ? 'active' : '' }}"
+                    href="{{ route('colors.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          width="20" viewBox="0 0 20 20">
+                          <path d="M10 2a8 8 0 1 0 0 16h1.2a2 2 0 0 0 1.5-3.3
+                                  1.5 1.5 0 0 1 1.1-2.5H15a3 3 0 0 0 3-3
+                                  7.5 7.5 0 0 0-8-7.2Z"
+                                stroke="currentColor" stroke-width="1.7"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                          <circle cx="6.5" cy="9" r="1" fill="currentColor" />
+                          <circle cx="9" cy="5.5" r="1" fill="currentColor" />
+                          <circle cx="13" cy="6.5" r="1" fill="currentColor" />
+                          <circle cx="15" cy="9.5" r="1" fill="currentColor" />
+                      </svg>
+                      Colors
+                  </a>
+              </li>
+
+              {{-- Shapes --}}
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('shapes.*') ? 'active' : '' }}"
+                    href="{{ route('shapes.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          width="20" viewBox="0 0 20 20">
+                          <circle cx="5" cy="5" r="3"
+                                  stroke="currentColor" stroke-width="1.7" />
+                          <rect x="11" y="2" width="6" height="6" rx="1"
+                                stroke="currentColor" stroke-width="1.7" />
+                          <path d="M10 18 5.5 10h9L10 18Z"
+                                stroke="currentColor" stroke-width="1.7"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      Shapes
+                  </a>
+              </li>
+
+              {{-- Parts --}}
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('parts.*') ? 'active' : '' }}"
+                    href="{{ route('parts.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          viewBox="0 0 20 20" width="20">
+                          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2"
+                                stroke="currentColor" stroke-width="1.3" />
+                      </svg>
+                      Parts
+                  </a>
+              </li>
+
+              {{-- Job Parts --}}
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('job-parts.*') ? 'active' : '' }}"
+                    href="{{ route('job-parts.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          viewBox="0 0 20 20" width="20">
+                          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2"
+                                stroke="currentColor" stroke-width="1.3" />
+                      </svg>
+                      Job Parts
+                  </a>
+              </li>
+
+              {{-- Job Flat Rates --}}
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('job-flat-rates.*') ? 'active' : '' }}"
+                    href="{{ route('job-flat-rates.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          viewBox="0 0 20 20" width="20">
+                          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2"
+                                stroke="currentColor" stroke-width="1.3" />
+                      </svg>
+                      Job Flat Rates
+                  </a>
+              </li>
+
+          </ul>
       </div>
+      
 
      
       {{--
