@@ -1,5 +1,5 @@
 <div class="row g-4">
-    <div class="col-lg-7">
+    <div class="col-12">
         <div class="panel">
             <h6 class="font-weight-bold mb-3">
                 Job Reimbursements details
@@ -48,10 +48,10 @@
     </div>
 </div>
 <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('job-reimbursements.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">
+    <a href="{{ route('job-reimbursements.index') }}" class="btn-back-custom   ">
         Cancel
     </a>
-    <button type="submit" class="btn btn-success font-weight-bold text-white w-fixed-sm">
+    <button type="submit" class="btn btn-success text-white font-weight-bold btn-primary-custom">
         {{ isset($jobReimbursement) ? 'Update' : 'Save' }} Job Reimbursements
     </button>
 </div>

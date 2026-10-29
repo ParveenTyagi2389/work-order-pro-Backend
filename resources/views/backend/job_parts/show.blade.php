@@ -7,14 +7,6 @@
         <h2 class="page-title font-weight-bold">
             Job Part Details
         </h2>
-        <div class="display-flex gap-3">
-            <a href="{{ route('job-parts.index') }}" class="btn-back-custom">
-                Back
-            </a>
-            <a href="{{ route('job-parts.edit',$jobPart) }}" class="btn-primary-custom">
-                Edit
-            </a>
-        </div>
     </div>
     <div class="panel border">
         <div class="row g-4">
@@ -59,6 +51,14 @@
                 </strong>
             </div>
         </div>
+    </div>
+    <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
+        <a href="{{ route('job-parts.index') }}" class="btn-back-custom">
+            Back
+        </a>
+        <a href="{{ route('job-parts.edit',$jobPart) }}" class="btn-primary-custom">
+            Edit
+        </a>
     </div>
 </div>
 @endsection

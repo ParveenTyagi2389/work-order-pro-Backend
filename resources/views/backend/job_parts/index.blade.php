@@ -21,7 +21,7 @@
         </p>
     </div>
 
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <div class="search-input-width search-box-max-width">
             <input
                 type="text"
