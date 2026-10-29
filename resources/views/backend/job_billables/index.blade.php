@@ -29,6 +29,7 @@
                 placeholder="Search records"
                 autocomplete="off"
             >
+            <i class="fi-rs-search filter-search-icon"></i>
         </div>
 
         <a class="btn-custom btn-primary-custom font-weight-bold create-role-action text-decoration-none"
