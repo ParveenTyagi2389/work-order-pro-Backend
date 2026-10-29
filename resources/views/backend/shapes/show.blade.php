@@ -7,14 +7,6 @@
         <h2 class="page-title font-weight-bold">
             {{ $shape->shape_name }}
         </h2>
-        <div class="display-flex gap-3">
-            <a href="{{ route('shapes.index') }}" class="btn-back-custom">
-                Back
-            </a>
-            <a href="{{ route('shapes.edit',$shape) }}" class="btn-primary-custom">
-                Edit
-            </a>
-        </div>
     </div>
     <div class="panel border">
         <div class="row g-4">
@@ -27,6 +19,14 @@
                 <strong>{{ $shape->shape_code ?: "—" }}</strong>
             </div>
         </div>
+    </div>
+    <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
+        <a href="{{ route('shapes.index') }}" class="btn-back-custom">
+            Back
+        </a>
+        <a href="{{ route('shapes.edit',$shape) }}" class="btn-primary-custom">
+            Edit
+        </a>
     </div>
 </div>
 @endsection

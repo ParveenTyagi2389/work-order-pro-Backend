@@ -5,7 +5,6 @@
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="page-title font-weight-bold">{{ $color->color_name }}</h2>
-        <div class ="wo-action-btns"><a href="{{ route('colors.index') }}" class="btn bg-white font-weight-bold btn-back-custom">Back</a> <a href="{{ route('colors.edit',$color) }}" class="btn btn-success text-white font-weight-bold btn-primary-custom">Edit</a></div>
     </div>
     <div class="panel border">
         <div class="row g-4">
@@ -17,5 +16,6 @@
             </div>
         </div>
     </div>
+    <div class="display-flex justify-content-end gap-3 mt-4 mb-5"><a href="{{ route('colors.index') }}" class="btn bg-white font-weight-bold btn-back-custom">Back</a> <a href="{{ route('colors.edit',$color) }}" class="btn btn-success text-white font-weight-bold btn-primary-custom">Edit</a></div>
 </div>
 @endsection
