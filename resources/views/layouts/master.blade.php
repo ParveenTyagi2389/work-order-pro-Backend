@@ -13,6 +13,8 @@
   <link href="{{ asset('css/uicons-brands.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="{{ asset('js/workorder-live-search.js') }}"></script>
 </head>
 
 <body class="dashboard-page">
@@ -25,9 +27,6 @@
    @yield('content')
   </main>
 
-
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   <!-- jQuery Validation Plugin CDN -->
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>

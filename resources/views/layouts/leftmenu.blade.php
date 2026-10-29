@@ -42,7 +42,8 @@
         </svg>
         Billing Accounts
       </a>
-      {{-- <a class="nav-item" href="invoices.html">
+     <a class="nav-item {{ request()->routeIs('invoices.*') ? 'active' : '' }}" href="{{ route('invoices.index') }}">
+
         <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 20 20" width="20">
           <path d="M12 2H5L3 3v14l2 1h10l2-1V7z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
             stroke-width="1.7"></path>
@@ -50,7 +51,7 @@
             stroke-width="1.7"></path>
         </svg>
         Invoices
-      </a> --}}
+      </a>
       <a class="nav-item {{ request()->routeIs('technicians.*') ? 'active' : '' }}" href="{{ route('technicians.index') }}">
         <img alt="" src="/images/technician.svg" />
         Technicians
@@ -95,7 +96,9 @@
               'shapes.*',
               'parts.*',
               'job-parts.*',
-              'job-flat-rates.*'
+              'job-flat-rates.*',
+              'job-billables.*',
+              'job-reimbursements.*'
           );
       @endphp
 
@@ -221,6 +224,31 @@
                       Job Flat Rates
                   </a>
               </li>
+
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('job-billables.*') ? 'active' : '' }}"
+                    href="{{ route('job-billables.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          viewBox="0 0 20 20" width="20">
+                          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2"
+                                stroke="currentColor" stroke-width="1.3" />
+                      </svg>
+                      Job Billables
+                  </a>
+              </li>
+
+              <li>
+                  <a class="nav-item dropdown-item {{ request()->routeIs('job-reimbursements.*') ? 'active' : '' }}"
+                    href="{{ route('job-reimbursements.index') }}">
+                      <svg aria-hidden="true" fill="none" height="20"
+                          viewBox="0 0 20 20" width="20">
+                          <path d="M17 6H3L2 8v8l1 2h14l1-2V8zm-4 0V4l-1-1H8L7 4v2"
+                                stroke="currentColor" stroke-width="1.3" />
+                      </svg>
+                      Job Reimbursements
+                  </a>
+              </li>
+             
 
           </ul>
       </div>
