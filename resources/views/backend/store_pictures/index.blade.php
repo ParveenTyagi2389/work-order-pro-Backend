@@ -52,13 +52,13 @@
                                     —
                                 @endif
                             </td>
-                            <td>
-                                <a href="{{ route('store-pictures.show',$item) }}">View</a>
-                                <a href="{{ route('store-pictures.edit',$item) }}">Edit</a>
+                            <td class="jajohn-admin-text">
+                                <a class="btn-action-simple text-decoration-none" href="{{ route('store-pictures.show',$item) }}">View</a>
+                                <a class="btn-action-simple text-decoration-none" href="{{ route('store-pictures.edit',$item) }}">Edit</a>
                                 <form class="d-inline" method="POST" action="{{ route('store-pictures.destroy',$item) }}" onsubmit="return confirm('Delete this picture?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">Delete</button>
+                                    <button type="submit" class="btn-action-simple">Delete</button>
                                 </form>
                             </td>
                         </tr>

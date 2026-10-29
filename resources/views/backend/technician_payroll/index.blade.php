@@ -54,13 +54,13 @@
                         <td>{{ $p->authorized?'Yes':'No' }}</td>
                         <td>{{ $p->paid?'Yes':'No' }}</td>
                         <td>{{ $p->paid_check?'Yes':'No' }}</td>
-                        <td>
-                            <a href="{{ route('technician-payroll.show',$p) }}">View</a> 
-                            <a href="{{ route('technician-payroll.edit',$p) }}">Edit</a>
+                        <td class="jajohn-admin-text">
+                            <a class="btn-action-simple text-decoration-none" href="{{ route('technician-payroll.show',$p) }}">View</a> 
+                            <a class="btn-action-simple text-decoration-none" href="{{ route('technician-payroll.edit',$p) }}">Edit</a>
                             <form method="POST" action="{{ route('technician-payroll.destroy',$p) }}" class="d-inline" onsubmit="return confirm('Delete this payroll record?')">
                                 @csrf 
                                 @method('DELETE')
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="btn-action-simple">Delete</button>
                             </form>
                         </td>
                     </tr>

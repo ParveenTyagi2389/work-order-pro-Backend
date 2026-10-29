@@ -23,7 +23,16 @@
     <div class="panel customertypecontactphonesitesa-text">
         <div class="table-responsive-custom border">
             <table class="table-custom log-idtimestampuseractionentit-text-alt">
-                <thead><tr><th class="font-weight-bold log-id-text">NAME</th><th class="font-weight-bold log-id-text">PHONE</th><th class="font-weight-bold log-id-text">EMAIL</th><th class="font-weight-bold log-id-text">ACCESS</th><th class="font-weight-bold log-id-text">STATUS</th><th class="font-weight-bold log-id-text">ACTIONS</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th class="font-weight-bold log-id-text">NAME</th>
+                        <th class="font-weight-bold log-id-text">PHONE</th>
+                        <th class="font-weight-bold log-id-text">EMAIL</th>
+                        <th class="font-weight-bold log-id-text">ACCESS</th>
+                        <th class="font-weight-bold log-id-text">STATUS</th>
+                        <th class="font-weight-bold log-id-text">ACTIONS</th>
+                    </tr>
+                </thead>
                 <tbody>
                 @forelse ($technicians as $technician)
                     <tr>
@@ -35,9 +44,15 @@
                         <td class="jajohn-admin-text">
                             <a class="btn-action-simple text-decoration-none" href="{{ route('technicians.show', $technician) }}">View</a>
                             <a class="btn-action-simple text-decoration-none" href="{{ route('technicians.edit', $technician) }}">Edit</a>
-                            <form action="{{ route('technicians.destroy', $technician) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this technician?');">
-                                @csrf @method('DELETE')
-                                <button class="btn-action-simple" type="submit">Delete</button>
+                            <form action="{{ route('technicians.destroy', $technician) }}"
+                                method="POST"
+                                class="d-inline delete-technician-form">
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="btn-action-simple" type="submit">
+                                    Delete
+                                </button>
                             </form>
                         </td>
                     </tr>
@@ -50,4 +65,43 @@
         <div class="mt-3">{{ $technicians->links() }}</div>
     </div>
 </div>
+@endsection
+
+@section('script')
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.delete-technician-form').forEach(function (form) {
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'This technician will be permanently deleted.',
+                icon: 'warning',
+
+                showCancelButton: true,
+                confirmButtonColor: '#078b4d',
+                cancelButtonColor: '#6c757d',
+
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel',
+
+                reverseButtons: true,
+                focusCancel: true
+            }).then(function (result) {
+
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+
+            });
+        });
+
+    });
+
+});
+</script>
 @endsection

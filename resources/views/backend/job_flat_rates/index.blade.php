@@ -27,8 +27,10 @@
                         <td>{{ $item->workOrder->customer_work_order ?? ('WO-'.$item->work_order_id) }}</td>
                         <td>{{ $item->rate }}</td>
                         <td>{{ $item->description ?? '—' }}</td>
-                        <td><a href="{{ route('job-flat-rates.show',$item) }}">View</a> <a href="{{ route('job-flat-rates.edit',$item) }}">Edit</a>
-                            <form class="d-inline" method="POST" action="{{ route('job-flat-rates.destroy',$item) }}" onsubmit="return confirm('Delete this record?')">@csrf @method('DELETE')<button type="submit">Delete</button></form>
+                        <td class="jajohn-admin-text">
+                            <a class="btn-action-simple text-decoration-none" href="{{ route('job-flat-rates.show',$item) }}">View</a>
+                            <a class="btn-action-simple text-decoration-none" href="{{ route('job-flat-rates.edit',$item) }}">Edit</a>
+                            <form class="d-inline" method="POST" action="{{ route('job-flat-rates.destroy',$item) }}" onsubmit="return confirm('Delete this record?')">@csrf @method('DELETE')<button type="submit" class="btn-action-simple">Delete</button></form>
                         </td>
                     </tr>@empty<tr>
                         <td colspan="4" class="text-center">No records found.</td>
