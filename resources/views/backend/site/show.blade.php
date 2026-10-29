@@ -27,10 +27,10 @@
                 @if($site->cvs_link)<a href="{{ $site->cvs_link }}" target="_blank" rel="noopener noreferrer">{{ $site->cvs_link }}</a>@else — @endif
             </div>
         </div>
-        <div class="display-flex justify-content-end gap-3 mt-4">
-            <a class="btn-back-custom" href="{{ route('sites.index') }}">Back</a>
-            <a class="btn text-white font-weight-bold btn-primary-custom" href="{{ route('sites.edit', $site) }}">Edit</a>
-        </div>
+    </div>
+    <div class="display-flex justify-content-end gap-3 mt-4">
+        <a class="btn-back-custom" href="{{ route('sites.index') }}">Back</a>
+        <a class="btn text-white font-weight-bold btn-primary-custom" href="{{ route('sites.edit', $site) }}">Edit</a>
     </div>
 </div>
 @endsection

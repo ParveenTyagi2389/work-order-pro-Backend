@@ -6,7 +6,7 @@
     @if (session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
     @if (session('error'))<div class="alert alert-danger">{{ session('error') }}</div>@endif
     <div class="mb-4"><h2 class="page-title font-weight-bold">Technicians</h2><p class="breadcrumb-text">Manage technician contact details and access.</p></div>
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('technicians.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" type="text" name="search" value="{{ request('search') }}" placeholder="Search name, email or phone">
             <i class="fi-rs-search custom-icon-left-center display-flex-i"></i>

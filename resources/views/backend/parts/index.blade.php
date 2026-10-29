@@ -18,7 +18,7 @@
         <p class="breadcrumb-text">Manage part numbers and descriptions.</p>
     </div>
 
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('parts.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom"
                    type="text" name="search" value="{{ request('search') }}"

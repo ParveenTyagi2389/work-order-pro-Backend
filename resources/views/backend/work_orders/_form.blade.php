@@ -2,7 +2,7 @@
 <div class="row g-4">
     <!-- Work Order Details -->
     <div class="col-lg-7">
-        <div class="panel mb-4">
+        <div class="panel">
             <h6 class="font-weight-bold mb-3">Work order details</h6>
 
             <div class="mb-3">
@@ -102,7 +102,7 @@
 
     <!-- Charges & Status -->
     <div class="col-lg-5">
-        <div class="panel mb-4">
+        <div class="panel mb-4 h-100">
             <h6 class="font-weight-bold mb-3">Charges &amp; status</h6>
 
             <div class="mb-3">

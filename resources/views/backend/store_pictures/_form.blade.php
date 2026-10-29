@@ -1,5 +1,5 @@
 <div class="row g-4">
-    <div class="col-lg-7">
+    <div class="col-12">
         <div class="panel">
             <h6 class="font-weight-bold mb-3">
                 Store / Site Picture details
@@ -59,8 +59,8 @@
     </div>
 </div>
 <div class="display-flex justify-content-end gap-3 mt-4 mb-5">
-    <a href="{{ route('store-pictures.index') }}" class="btn bg-white font-weight-bold w-fixed-sm">Cancel</a>
-    <button type="submit" class="btn btn-success font-weight-bold text-white w-fixed-sm">
-        {{ isset($storePicture) ? 'Update Store / Site Picture' : 'Save Store / Site Picture' }}
+    <a href="{{ route('store-pictures.index') }}" class="btn-back-custom">Cancel</a>
+    <button type="submit" class="btn-custom btn-primary-custom">
+        {{ isset($storePicture) ? 'Update Store / Site Picture' : 'Save Store' }}
     </button>
 </div>

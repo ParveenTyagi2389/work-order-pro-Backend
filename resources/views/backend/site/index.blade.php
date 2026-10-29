@@ -6,12 +6,12 @@
 @section('content')
 <div class="content-area">
     @if (session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('sites.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom"
                    type="text" name="q" value="{{ request('q') }}" placeholder="Search sites..." />
             <i class="fi-rs-search custom-icon-left-center display-flex-i"></i>
-            <select name="customer_type" class="form-control-custom">
+            <select name="customer_type" class="form-control form-control-styled status-select">
                 <option value="">All customer types</option>
                 @foreach ($customerTypes as $type)
                     <option value="{{ $type->name }}" @selected(request('customer_type') == $type->name)>{{ $type->name }}</option>

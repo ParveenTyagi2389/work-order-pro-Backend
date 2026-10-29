@@ -28,9 +28,9 @@
                 <textarea class="form-control form-control-styled textarea-styled-desc col-md-textarea" name="notes" rows="4">{{ old('notes', $technician->notes ?? '') }}</textarea>
                 @error('notes')<div class="text-danger small">{{ $message }}</div>@enderror
             </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="active" name="active" value="1" @checked(old('active', $technician->active ?? true))>
-                <label class="form-check-label form-label-custom" for="active">Active technician</label>
+            <div class="display-flex align-items-center gap-2 mb-2">
+                <input class="form-checkbox" type="checkbox" id="active" name="active" value="1" @checked(old('active', $technician->active ?? true))>
+                <label class="permission-text" for="active">Active technician</label>
                 @error('active')<div class="text-danger small">{{ $message }}</div>@enderror
             </div>
         </div>

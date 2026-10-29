@@ -1,5 +1,5 @@
 <div class="row g-4">
-    <div class="col-md-7">
+    <div class="col-12">
         <div class="panel">
             <h6 class="font-weight-bold mb-3">
                 Job Codes details

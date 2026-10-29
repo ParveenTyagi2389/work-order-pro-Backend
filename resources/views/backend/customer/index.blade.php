@@ -53,17 +53,15 @@
         <div class="alert alert-danger mt-4">{{ session('error') }}</div>
     @endif
 
-    <div class="panel display-flex panel-header-padding code-usageactive-text">
-        <form class="display-flex all-statusall-types-text w-100 align-items-center" method="GET" action="{{ route('customer-types.index') }}">
-            <div class="search-input-width search-box-max-width">
+    <div class="panel search-action-row">
+        <form class="search-input-width search-box-max-width" method="GET" action="{{ route('customer-types.index') }}">
                 <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom"
                     name="search" value="{{ $search }}" placeholder="Search customer types..." type="text" />
                 <i class="fi-rs-search custom-icon-left-center display-flex-i"></i>
-            </div>
-            <button class="btn-custom btn-outline-secondary ms-2" type="submit">Search</button>
-            <a class="btn-custom btn-primary-custom add-customer-action ms-auto"
-            href="{{ route('customer-types.create') }}">+ Add Customer Type</a>
+            <button class="btn border btn-small-padding view-action" type="submit">Search</button>
         </form>
+                    <a class="btn-custom btn-primary-custom add-customer-action ms-auto"
+            href="{{ route('customer-types.create') }}">+ Add Customer Type</a>
     </div>
 
     <div class="panel customertypecontactphonesitesa-text">

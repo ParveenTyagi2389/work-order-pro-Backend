@@ -89,21 +89,22 @@
     </div>
 
     <h5 class="font-weight-bold mb-3 mt-4">Primary billing contact</h5>
-    <div class="mb-3">
+    <div class = "row g-4 mb-3 ">
+    <div class="col-md-6">
         <label class="form-label-custom font-weight-bold">Contact name</label>
         <input class="form-control-styled form-control" type="text" name="contact_name"
                value="{{ old('contact_name', $primaryEmail->bill_name ?? '') }}" />
         @error('contact_name')<div class="text-danger mt-1">{{ $message }}</div>@enderror
     </div>
-
-    <div class="row g-4 mb-3">
-        <div class="column-full col-md-6">
+            <div class="column-full col-md-6">
             <label class="form-label-custom font-weight-bold">Email</label>
             <input class="form-control-styled form-control" type="email" name="contact_email"
                    value="{{ old('contact_email', $primaryEmail->bill_email ?? '') }}" />
             @error('contact_email')<div class="text-danger mt-1">{{ $message }}</div>@enderror
         </div>
-        <div class="column-full col-md-6">
+</div>
+    <div class="row g-4 mb-3">
+        <div class="column-full col-12">
             <label class="form-label-custom font-weight-bold">Active</label>
             <div class="display-flex align-items-center gap-2 mb-2">
                 <input class="form-checkbox" type="checkbox" name="contact_active" value="1"

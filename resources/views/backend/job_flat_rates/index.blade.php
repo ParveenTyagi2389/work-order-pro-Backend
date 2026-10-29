@@ -8,7 +8,7 @@
         <h2 class="page-title font-weight-bold">Job Flat Rates</h2>
         <p class="breadcrumb-text">Manage job flat rates for work orders.</p>
     </div>
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('job-flat-rates.index') }}" class="search-input-width search-box-max-width"><input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search records"><i class="fi-rs-search filter-search-icon"></i><button class="btn border btn-small-padding view-action" type="submit">Search</button></form><a class="btn-custom btn-primary-custom font-weight-bold create-role-action text-decoration-none" href="{{ route('job-flat-rates.create') }}">+ Add Record</a>
     </div>
     <div class="panel customertypecontactphonesitesa-text">

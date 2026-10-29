@@ -16,7 +16,7 @@
     <div class="mb-4">
         <h2 class="page-title font-weight-bold">Shapes</h2>
     </div>
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('shapes.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search shapes">
               <i class="fi-rs-search filter-search-icon"></i>

@@ -16,7 +16,7 @@
             Manage uploaded pictures and related records.
         </p>
     </div>
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('store-pictures.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search records">
             <button class="btn border btn-small-padding view-action" type="submit">

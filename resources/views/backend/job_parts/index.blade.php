@@ -16,7 +16,7 @@
             Manage parts assigned to work orders.
         </p>
     </div>
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('job-parts.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search part number or work order">
             <i class="fi-rs-search filter-search-icon"></i>

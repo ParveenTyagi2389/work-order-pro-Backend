@@ -101,7 +101,7 @@ body {
   border-radius: 10px;
   font-size: 14px;
   color: #fff;
-  padding: 11px;
+  padding: 10px;
   border: 1px solid #078b4d;
   text-decoration: none;
   line-height: 18px;
@@ -4462,8 +4462,8 @@ input[type="radio"].display-none:checked+.priority-toggle-btn.priority-urgent {
 .btn-back-custom {
   background-color: #fff;
   border: 1px solid #dce6e1;
-  border-radius: 6px;
-  padding: 11px;
+  border-radius: 10px;
+  padding: 10px;
   font-size: 14px;
   font-weight: 600;
   color: #58706a;

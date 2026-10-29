@@ -9,7 +9,7 @@
         <h2 class="page-title font-weight-bold">Work Orders</h2>
         <p class="breadcrumb-text">Manage scheduled and completed work.</p>
     </div>
-    <div class="search-action-row">
+    <div class="panel search-action-row">
         <form method="GET" action="{{ route('work-orders.index') }}" class="search-input-width search-box-max-width">
             <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search work order or problem">
             <i class="fi-rs-search filter-search-icon"></i>
@@ -21,7 +21,7 @@
                 <option value="not_billed" @selected(request('status')==='not_billed' )>Not billed</option>
             </select>
             <button class="btn border btn-small-padding view-action">Filter</button>
-            <a class="btn border btn-small-padding view-action "
+            <a class="btn border btn-small-padding view-action d-flex align-items-center justify-content-center"
                 href="{{ route('work-orders.index') }}">Reset
             </a>
         </form>

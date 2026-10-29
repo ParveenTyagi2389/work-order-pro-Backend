@@ -71,7 +71,7 @@
         <form method="POST" action="{{ route('customer-types.destroy', $customerType) }}"
               onsubmit="return confirm('Delete this customer type?');">
             @csrf @method('DELETE')
-            <button class="btn btn-outline-danger py-2 font-weight-bold" type="submit">Delete</button>
+            <button class="btn btn-outline-danger py-2 font-weight-bold bg-white" type="submit">Delete</button>
         </form>
     @endif
 </div>

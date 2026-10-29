@@ -10,7 +10,7 @@
     <div class="alert alert-danger">{{ session('error') }}</div>
 @endif
 <div class="mb-4"><h2 class="page-title font-weight-bold">Colors</h2></div>
-<div class="search-action-row">
+<div class="panel search-action-row">
     <form method="GET" action="{{ route('colors.index') }}" class="search-input-width search-box-max-width">
         <input class="form-control-custom custom-search-padding search-icon-wrapper-input-custom" name="search" value="{{ request('search') }}" placeholder="Search colors">
         <i class="fi-rs-search filter-search-icon"></i>

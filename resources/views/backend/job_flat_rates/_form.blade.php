@@ -1,4 +1,4 @@
-<div class="row g-4"><div class="col-lg-7"><div class="panel">
+<div class="row g-4"><div class="col-12"><div class="panel">
 <h6 class="font-weight-bold mb-3">Job Flat Rates details</h6>
 <div class="mb-3">
 <label class="form-label form-label-custom">Work order <span class="text-danger">*</span></label>
