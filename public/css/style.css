@@ -5139,7 +5139,6 @@ a.btn-custom {
 
   .topbar-right {
     gap: 16px;
-    flex-wrap: wrap;
     justify-content: flex-end;
   }
 
@@ -5272,7 +5271,12 @@ a.btn-custom {
     width: 100%;
     justify-content: center;
   }
-
+.user-info {
+  display: none;
+}
+.display-flex .icon-angle-md {
+  display: none;
+}
   .tech-item {
     display: flex;
     flex-direction: column;
