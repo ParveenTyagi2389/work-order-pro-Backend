@@ -54,9 +54,9 @@
                     </div>
                     @enderror
                 </div>
-                <div class="form-check mb-3">
+                <div class="display-flex align-items-center gap-2 mb-2">
                     <input type="hidden" name="ordered" value="0">
-                    <input class="form-check-input" type="checkbox" id="ordered" name="ordered" value="1" @checked(old('ordered',$jobPart->ordered ?? false))>
+                    <input class="form-checkbox" type="checkbox" id="ordered" name="ordered" value="1" @checked(old('ordered',$jobPart->ordered ?? false))>
                     <label class="form-check-label" for="ordered">
                         Part ordered
                     </label>

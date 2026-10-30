@@ -3,7 +3,7 @@
 @section('page-title', 'WorkOrder Pro - Technician Details')
 @section('content')
 <div class="content-area">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex justify-content-between align-items-center">
         <div><h2 class="page-title font-weight-bold">{{ $technician->name }}</h2><p class="breadcrumb-text">Technicians · Details</p></div>
     </div>
     <div class="panel border">

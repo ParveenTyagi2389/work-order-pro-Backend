@@ -30,7 +30,7 @@
             <div class="mb-3">
                 <label class="form-label form-label-custom">Picture @if(!isset($jobPicture))*@endif</label>
                 <input type="file" name="picture" accept="image/jpeg,image/png,image/webp,image/gif" class="form-control form-control-styled form-input-padded layout-input-variant" @required(!isset($jobPicture))>
-                <small class="text-muted">JPG, PNG, WEBP or GIF; maximum 5 MB.</small>
+                <P class="text-muted jpg-text">JPG, PNG, WEBP or GIF; maximum 5 MB.</P>
                 @error('picture')
                 <div class="text-danger small">
                     {{ $message }}

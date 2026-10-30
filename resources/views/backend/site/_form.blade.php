@@ -29,7 +29,7 @@ $selectedBillTo = old('bill_to', $site->bill_to ?? '');
                     value="{{ old('address', $site->address ?? '') }}"
                     placeholder="Start typing an address..." />
                 <div id="address-suggestions" class="list-group mt-1" style="display:none; position:relative; z-index:20;"></div>
-                <small class="text-muted">Start typing and select an address to fill city, state, ZIP, and coordinates.</small>
+                <p class="text-muted mb-0 mt-2">Start typing and select an address to fill city, state, ZIP, and coordinates.</p>
                 @error('address')<div class="text-danger small">{{ $message }}</div>@enderror
             </div>
 
@@ -156,7 +156,7 @@ $selectedBillTo = old('bill_to', $site->bill_to ?? '');
                 @error('hours')<div class="text-danger small">{{ $message }}</div>@enderror
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label class="form-label form-label-custom">CVS link</label>
                 <input class="form-control form-control-styled form-input-padded layout-input-variant"
                     type="url" name="cvs_link" value="{{ old('cvs_link', $site->cvs_link ?? '') }}" />

@@ -3,7 +3,7 @@
 @section('page-title','WorkOrder Pro - Work Order Details')
 @section('content')
 <div class="content-area">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex justify-content-between align-items-center">
         <div>
             <h2 class="page-title font-weight-bold">Work Order {{ $workOrder->customer_work_order ?: ('WO-'.$workOrder->id) }}</h2>
             <p class="breadcrumb-text">Work Orders · Details</p>

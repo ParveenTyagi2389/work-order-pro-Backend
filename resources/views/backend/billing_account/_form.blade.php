@@ -103,10 +103,10 @@
             @error('contact_email')<div class="text-danger mt-1">{{ $message }}</div>@enderror
         </div>
 </div>
-    <div class="row g-4 mb-3">
+    <div class="row g-4">
         <div class="column-full col-12">
             <label class="form-label-custom font-weight-bold">Active</label>
-            <div class="display-flex align-items-center gap-2 mb-2">
+            <div class="display-flex align-items-center gap-2">
                 <input class="form-checkbox" type="checkbox" name="contact_active" value="1"
                        {{ old('contact_active', $primaryEmail->bill_active ?? true) ? 'checked' : '' }} />
                 <span class="permission-text">Active billing contact</span>

@@ -1494,7 +1494,13 @@ body {
   justify-content: center;
   position: relative;
 }
-
+.jpg-text {
+  font-size: 15px;
+  margin: 10px 0px 0px 0px;
+}
+.dropdown-menu .dropdown-item:active {
+    background-color: #ffffff;
+}
 .photo-upload-circle i {
   font-size: 24px;
   color: #94a3b8;
